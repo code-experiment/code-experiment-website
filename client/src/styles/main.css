@@ -4,4 +4,10 @@
 
 body {
   margin: 0;
+  background-color: whitesmoke;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
 }

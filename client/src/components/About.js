@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => {
   return (
-    <div>
+    <div id="about">
       <h1>
         About
       </h1>
