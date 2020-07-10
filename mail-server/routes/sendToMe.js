@@ -20,16 +20,16 @@ const transporter = nodemailer.createTransport(transport);
       console.error(error)
     } else {
       //this means success
-      console.log('users ready to mail myself')
+      console.log('users ready to mail myself', success)
     }
   });
  ;
 
- sendToMeRouter.post('/', (req,res, next) => {
+ sendToMeRouter.post('/', (req, res) => {
   //make mailable object
   const mail = {
     from: process.env.THE_EMAIL,
-    to: 'codeexperimentcontact@gmail.com',
+    to: process.env.THE_EMAIL,
     subject: req.body.subject,
     text: `
       from: ${req.body.name} 
@@ -38,18 +38,18 @@ const transporter = nodemailer.createTransport(transport);
     `
   }
 
-  transporter.sendMail(mail, (err,data) => {
+  transporter.sendMail(mail, (err, data) => {
     if(err) {
       res.json({
         status: 'fail'
       })
     } else {
       res.json({
-        status: 'success'
+        status: 'success',
+        data
       })
     }
   })
-// error handling goes here. 
 });
 
 module.exports = sendToMeRouter
