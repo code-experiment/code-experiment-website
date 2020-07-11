@@ -36,37 +36,40 @@ export default () => {
     })
   }
   return (
-    <form onSubmit={handleSubmit} id="contact-form">
-      <input
-        placeholder="name"
-        type="text"
-        onChange={(event) => setName(event.target.value)}
-        value={name}
-        className="contact-form--input"
-        />
+    <div className="contact-form-wrapper">
+      <h1 className="contact-form-header-text">Contact Us</h1>
+      <form onSubmit={handleSubmit} id="contact-form">
+        <input
+          placeholder="name"
+          type="text"
+          onChange={(event) => setName(event.target.value)}
+          value={name}
+          className="contact-form--input"
+          />
 
-      <input
-        placeholder="email"
-        type="email"
-        onChange={(event) => setEmail(event.target.value)}
-        value={email}
-        className="contact-form--input"
-        />
+        <input
+          placeholder="email"
+          type="email"
+          onChange={(event) => setEmail(event.target.value)}
+          value={email}
+          className="contact-form--input"
+          />
 
-      <textarea 
-        placeholder="question"
-        type="textarea"
-        onChange={(event) => setQuestion(event.target.value)}
-        value={question}
-        className="contact-form--input"
-      />
-      {
-        isLoading ? (
-          <button type="button" className="contact-form-btn">Sending...</button>
-        ) : (
-          <button type="submit" className="contact-form-btn">Submit</button>
-        )
-      }
-    </form>
+        <textarea 
+          placeholder="question"
+          type="textarea"
+          onChange={(event) => setQuestion(event.target.value)}
+          value={question}
+          className="contact-form--input"
+        />
+        {
+          isLoading ? (
+            <button type="button" className="contact-form-btn">Sending...</button>
+          ) : (
+            <button type="submit" className="contact-form-btn">Submit</button>
+          )
+        }
+      </form>
+    </div>
   );
 }

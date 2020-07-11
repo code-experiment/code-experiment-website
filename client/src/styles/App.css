@@ -1,0 +1,33 @@
+.slack-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 2em;
+}
+
+.slack-logo-wrapper {
+  width: 200px;
+}
+
+.slack-logo {
+  max-width: 100%;
+}
+
+.slack-link-text {
+  text-decoration: none;
+  font-size: 2.25rem;
+  color: #22223b;
+  color: #F88E00;
+}
+
+@media only screen and (min-width: 600px) {
+  .slack-link-text {
+    font-size: 3rem;
+  }
+
+  .slack-logo-wrapper {
+    width: 300px;
+  }
+}
