@@ -15,6 +15,7 @@ function App() {
         <a
           href="https://join.slack.com/t/codeassistworkspace/shared_invite/zt-frl94kyr-v7QepaQJKDG1NRh0vPdRhQ"
           target="_blank"
+          id="slack"
           rel="noopener noreferrer"
         >
           Join Slack

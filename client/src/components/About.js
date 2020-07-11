@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => {
   return (
-    <div id="about">
+    <div id="about" style={{ paddingTop: 80 }}>
       <h1>
         About
       </h1>
