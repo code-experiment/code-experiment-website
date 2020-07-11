@@ -19,9 +19,11 @@ function App() {
             target="_blank"
             id="slack"
             rel="noopener noreferrer"
-            style={{ width: 100, height: 40, border: "1px solid black", textAlign: "center", justifySelf: "center", alignSelf: "center" }}
+            style={{ width: 100, height: 40, backgroundColor: "#22223b", borderRadius: 5, display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none" }}
           >
-            Join Slack
+            <div style={{ color: "#F88E00"}}>
+              Join Slack
+            </div>
           </a>
         </div>
         <ContactForm />
