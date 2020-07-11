@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import '../styles/ContactForm.css'
+import api from "../helpers/api";
 
 // Items we need for axios call
 // subject: req.body.subject,
@@ -13,9 +14,20 @@ export default () => {
   const [ name, setName ] = useState("")
   const [ email, setEmail ] = useState("")
   const [ question, setQuestion ] = useState("")
+
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log(name, email, question)
+    api.post('/', {
+      "subject": question.slice(0, 10),
+      "name": name,
+      "email": email,
+      "text": question
+    }).then((res) => {
+      console.log(res)
+    }).catch((err) => {
+      console.log(err)
+    })
   }
   return (
     <form onSubmit={handleSubmit} id="contact-form">
