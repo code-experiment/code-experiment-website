@@ -5,6 +5,7 @@
 
 .event-date-container {
   height: 30vh;
+  min-height: 200px;
 }
 
 .top-date {
