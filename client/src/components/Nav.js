@@ -4,8 +4,13 @@ import '../styles/NavStyles.css';
 
 export default () => {
   const handleClick = (id) => {
-      var elmnt = document.getElementById(id);
-      elmnt.scrollIntoView();
+    var elmnt = document.getElementById(id)
+    
+    if (id === 'about' || id ===  "contact-form-id") {
+      elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
+    } else { 
+      elmnt.scrollIntoView({ behavior: 'smooth', block: "center" })
+    }
   }
 
   return (
@@ -30,7 +35,7 @@ export default () => {
             </div>
 
             <div className="link-wrapper">
-              <button onClick={() => handleClick("contact-form")} className="link">Contact</button>
+              <button onClick={() => handleClick("contact-form-id")} className="link">Contact</button>
             </div>
           </div>
         </nav>

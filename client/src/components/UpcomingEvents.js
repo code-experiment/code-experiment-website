@@ -4,7 +4,7 @@ import moment from 'moment'
 import '../styles/EventStyles.css'
 
 export default () => {
-  const nextMeetup = moment().startOf('week').add('days', 4) // thursday - change number to whatever day of week wanted
+  const nextMeetup = moment().startOf('week').add(4,'days') // thursday - change number to whatever day of week wanted
   const nextMeetupDay = nextMeetup.format('dddd')
   const nextMeetupDate = nextMeetup.format('LL').slice(0, -6)
 
