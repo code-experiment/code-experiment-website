@@ -1,5 +1,9 @@
 .contact-form-wrapper {
-  padding-top: 2em;
+  /* padding-top: 2em; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-form-header-text {
@@ -8,7 +12,7 @@
 
 #contact-form {
   padding-top: 2em;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
 }
@@ -33,9 +37,11 @@
 }
 
 .contact-form-btn {
-  font-size: 2rem;
+  /* Look at without these styles, I think it goes with the flow better especially on mobile screen but feel free to change it back */
+  /* font-size: 2rem; */
   padding: 1em;
-  margin-top: 1em;
+  /* margin-top: 1em; */
+  margin-top: 2em;
   margin-bottom: 1em;
   border: none;
   background-color: #22223b;

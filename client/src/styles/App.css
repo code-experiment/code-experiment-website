@@ -4,7 +4,8 @@
   align-items: center;
   flex-direction: column;
   border-bottom: 1px solid #CCC;
-  padding-bottom: 2em;
+  /* padding-bottom: 2em; */
+  padding-top: 80px;
 }
 
 .slack-logo-wrapper {
@@ -17,6 +18,7 @@
 
 .slack-link-text {
   text-decoration: none;
+  text-align: center;
   font-size: 2.25rem;
   color: #22223b;
   color: #F88E00;
