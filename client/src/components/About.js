@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/AboutStyles.css'
+import '../styles/About.css'
 
 export default () => {
   return (

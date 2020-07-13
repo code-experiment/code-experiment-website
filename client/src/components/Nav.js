@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/NavStyles.css';
+import '../styles/Nav.css';
 
 export default () => {
   const handleClick = (id) => {
@@ -9,7 +9,7 @@ export default () => {
     if (id === 'about' || id ===  "contact-form-id") {
       elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
     } else { 
-      elmnt.scrollIntoView({ behavior: 'smooth', block: "center" })
+      elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
     }
   }
 
