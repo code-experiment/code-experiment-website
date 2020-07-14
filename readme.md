@@ -4,8 +4,9 @@
 
 > **Table of contents:**
 - [Help Us Out And Contribute](#Would-you-like-to-help-make-this-site-better)
-- [Git Workflow For Active Contributors](#Git-workflow-for-users-on-contributors-list)
-
+- **Git Workflow For Active Contributors**
+  - [Git Workflow For Feature Branches](#Git-Workflow-For-Feature-Branches)
+  - [Git Workflow For Reviews](#Git-Workflow-For-Reviews)
 
 # Would you like to help make this site better?
 
@@ -96,22 +97,23 @@ $ git push origin COD-10
 - Please let the team know you have created the pull request.
 - Your code will go through a review before being merged.
   - If all the code checks off it will be merged in.
-  - If there is some changes that we request, you will be notified.  Please make requested changes, once your code has passed the review it will be merged in.
+  - If there is some changes that we request, you will be notified via email. Please make the requested changes and commit/push your code.
+  - Once your code has passed the review it will be merged in.
+  - If you have any questions leave a comment on the changes.
 
 > YOU DID IT!!!! Thank you!
 
 # Git Workflow For Reviews
-- Found a pull request
-- Click add a review
-  - Add any comments to things that need changed/updated if any
-- If you are finished reviewing the file follow these steps
-  - Click submit to review and it will have a drop down
-  - If there are changes to be made click submit changes request
-    - After the correct changes were made click resolved conversation on each correct change
-    - If all changes were made correctly click Submit Review
-    - Click Submit and Merge
-  - If no changes click submit and merge
-> All done!
+  - Found a pull request.
+  - Click add your review.
+  - Add any comments to things that need changed/updated if any.
+    - You can either add a single comment, which will not start the review. If you want to add a comment and start the review click start a review.
+  - If you are finished reviewing the file follow these steps.
+    - Click finish your review.
+    - If there are changes to be made click radio button Request changes and submit review.
+      - These changes will be emailed to the developer, after the correct changes have been made you can resolve each conversation.
+    - If no changes or all changes are fixed click radio button Approve and submit review.
+    - You might have to merge the pull request.
 
 
 [Back To Top](#Code-experiment-meetup)
