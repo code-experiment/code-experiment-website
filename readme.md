@@ -23,6 +23,8 @@
 
 # Git Workflow For Users On Contributors List
 
+# Git Workflow For Feature Branches
+
 > Please follow these steps each day you sit down to code.
 
 ### Find Something To Do
@@ -97,5 +99,19 @@ $ git push origin COD-10
   - If there is some changes that we request, you will be notified.  Please make requested changes, once your code has passed the review it will be merged in.
 
 > YOU DID IT!!!! Thank you!
+
+# Git Workflow For Reviews
+- Found a pull request
+- Click add a review
+  - Add any comments to things that need changed/updated if any
+- If you are finished reviewing the file follow these steps
+  - Click submit to review and it will have a drop down
+  - If there are changes to be made click submit changes request
+    - After the correct changes were made click resolved conversation on each correct change
+    - If all changes were made correctly click Submit Review
+    - Click Submit and Merge
+  - If no changes click submit and merge
+> All done!
+
 
 [Back To Top](#Code-experiment-meetup)
