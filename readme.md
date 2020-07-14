@@ -33,6 +33,7 @@
 ### You Found Something To Do
 
 - Let the team know what you decided to work on.
+- Hop over to the glo board for either issues or website todos.
 - Assign yourself to that task.
 - Drag that task to In Progress.
 
@@ -57,6 +58,7 @@ $ git checkout -b issue#number
 > Examples:
 ```
 $ git checkout -b COD-10
+OR
 $ git checkout -b issue#5
 ```
 
@@ -82,8 +84,13 @@ $ git push origin COD-10
 
 ### Pull Request
 
-- Hop onto github and create a pull request.
-- Attach pull request to the Glo board card.
+- Hop onto github and click compare & pull request.
+- While on the Open a pull request page, change the title.
+  - Please add your branch name in brackets to the title
+  > Example: [COD-10] Some title name
+- Add any extra comments in the description field
+- Click create pull request
+- Go back to the Glo board and assign that pull request to your card
 - Please let the team know you have created the pull request.
 - Your code will go through a review before being merged.
   - If all the code checks off it will be merged in.
