@@ -2,7 +2,13 @@
 
 > This is the repo for the Code Experiment Meetup's website.  We look forward to working with you at our weekly meetup!
 
-## Would you like to help make this site better?
+> **Table of contents:**
+- [Help Us Out And Contribute](#Would-you-like-to-help-make-this-site-better)
+- **Git Workflow For Active Contributors**
+  - [Git Workflow For Feature Branches](#Git-Workflow-For-Feature-Branches)
+  - [Git Workflow For Reviews](#Git-Workflow-For-Reviews)
+
+# Would you like to help make this site better?
 
 - Fork this repository
 - Clone the repository
@@ -11,37 +17,103 @@
 - Push changes to GitHub
 - Submit a pull request
 
-> We will review your changes, if we like them we will add them.
+> A team member will review your changes, please keep an eye out for any requested changes during this review.  Once all the code is working and they like the changes, they will merge it into the repo.  Thank you for the help!
 
-## Git Workflow
+[Back To Top](#Code-experiment-meetup)
 
-- Please follow these steps each day you sit down to code
 
-### Pull Latest Code
+# Git Workflow For Users On Contributors List
 
+# Git Workflow For Feature Branches
+
+> Please follow these steps each day you sit down to code.
+
+### Find Something To Do
+
+- Head over to the Glo board and find something off the TODO section.
+- Head over to the Issues section.
+
+### You Found Something To Do
+
+- Let the team know what you decided to work on.
+- Hop over to the glo board for either issues or website todos.
+- Assign yourself to that task.
+- Drag that task to In Progress.
+
+### Pull The Latest Code
+
+- Make sure you don't have any random changes and pull the latest code.
 ```
-$ git checkout master
+$ git status
+$ git checkout development
 $ git pull
 ```
 
-### Create your branch
+### Create your feature branch
 
-- Please create a new branch for each day of updates
-
-```
-$ git checkout -b "yourName-date"
-```
-
-### Finished with your new changes do this
+- Please create a new branch for your new task.
 
 ```
-$ git add .
-$ git commit -m "you commit message"
-$ git push
+$ git checkout -b card-name
+OR
+$ git checkout -b issue#number
+```
+> Examples:
+```
+$ git checkout -b COD-10
+OR
+$ git checkout -b issue#5
 ```
 
-> Communicate with another team member that you have pushed a new branch
+### CODE!
+
+- Your free to code.  We appreciate your help.
+- Don't be scared to commit as much as you want during your feature branch.
+
+### You Finished your new changes
+
+- Make sure you have working code!
+- Check to make sure you don't have any last minute commits and then push it to github.
+```
+$ git status
+$ git push origin branch-name
+```
+
+> Example Push.
+```
+$ git status
+$ git push origin COD-10
+```
 
 ### Pull Request
 
-- Hop onto github and work through the pull request together as a team
+- Hop onto github and click compare & pull request.
+- While on the Open a pull request page, change the title.
+  - Please add your branch name in brackets to the title
+  > Example: [COD-10] Some title name
+- Add any extra comments in the description field
+- Click create pull request
+- Go back to the Glo board and assign that pull request to your card
+- Please let the team know you have created the pull request.
+- Your code will go through a review before being merged.
+  - If all the code checks off it will be merged in.
+  - If there is some changes that we request, you will be notified via email. Please make the requested changes and commit/push your code.
+  - Once your code has passed the review it will be merged in.
+  - If you have any questions leave a comment on the changes.
+
+> YOU DID IT!!!! Thank you!
+
+# Git Workflow For Reviews
+  - Found a pull request.
+  - Click add your review.
+  - Add any comments to things that need changed/updated if any.
+    - You can either add a single comment, which will not start the review. If you want to add a comment and start the review click start a review.
+  - If you are finished reviewing the file follow these steps.
+    - Click finish your review.
+    - If there are changes to be made click radio button Request changes and submit review.
+      - These changes will be emailed to the developer, after the correct changes have been made you can resolve each conversation.
+    - If no changes or all changes are fixed click radio button Approve and submit review.
+    - You might have to merge the pull request.
+
+
+[Back To Top](#Code-experiment-meetup)
