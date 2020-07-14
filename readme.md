@@ -1,35 +1,17 @@
 # Code Experiment Meetup
 
-- Home
-  - about
-  - upcoming event date
-    - calendar
-    - create a function that auto updates
-  - Join slack
-- navbar
-  - home
-  - calendar
-  - contact
-- Calendar
-- Contact Form
-  - feedback
-- Join slack
+> This is the repo for the Code Experiment Meetup's website.  We look forward to working with you at our weekly meetup!
 
+## Would you like to help make this site better?
 
-### some notes i saw during install of nodemailer
-> IMAP API (  https://imapapi.com  ) is a server application to easily access
-  IMAP accounts via REST API
-> ImapFlow (  https://imapflow.com/  ) is an async IMAP client library for
-  Node.js
-> NodemailerApp (  https://nodemailer.com/app/  ) is a cross platform GUI app to
-  debug emails
-> Project Pending (  https://projectpending.com/  ) allows you to host DNS of
-  your project domains
-> Pending DNS (  https://pendingdns.com/  ) is the DNS server used that powers
-  Project Pending
-> Ethereal Email (  https://ethereal.email/  ) is an email testing service that
-  accepts all your test emails
+- Fork this repository
+- Clone the repository
+- Create a branch
+- Make necessary changes and commit those changes
+- Push changes to GitHub
+- Submit a pull request
 
+> We will review your changes, if we like them we will add them.
 
 ## Git Workflow
 
