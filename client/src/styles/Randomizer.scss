@@ -120,3 +120,33 @@
   text-decoration-line: underline;
   color: rgb(248, 142, 0);
 }
+
+
+@media only screen and (max-width: 894px) {
+  .randomizer-form-container {
+    flex-direction: column;
+  }
+
+  .randomizer-input-wrapper {
+    width: 100%;
+  }
+
+  .randomizer-form-spacing {
+    width: 0;
+    height: 2em;
+  }
+
+  .randomizer-btns-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .randomizer-names-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .randomizer-results-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
