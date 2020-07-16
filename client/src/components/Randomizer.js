@@ -9,15 +9,18 @@ export default () => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    var splitNames = name.split(',')
-    var state = [...names]
 
-    splitNames.map((name) => {
-      state.push(name)
-    })
-
-    setNames(state)
-    setName("")
+    if (name !== "") {
+      var splitNames = name.split(',')
+      var state = [...names]
+  
+      splitNames.map((name) => {
+        state.push(name)
+      })
+  
+      setNames(state)
+      setName("")
+    }
   }
 
   const handleRandomizeClick = (e, names) => {
@@ -57,7 +60,7 @@ export default () => {
       <div className="randomizer-form-container">
         <div className="randomizer-input-wrapper">
           <input 
-            placeholder="Add a name!"
+            placeholder="Add name/names"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
