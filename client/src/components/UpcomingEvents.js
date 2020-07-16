@@ -1,8 +1,6 @@
 import React from 'react'
 import moment from 'moment'
 
-import '../styles/UpcomingEvent.css'
-
 export default () => {
   const nextMeetup = moment().startOf('week').add(4,'days') // thursday - change number to whatever day of week wanted
   const nextMeetupDay = nextMeetup.format('dddd')
