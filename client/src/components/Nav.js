@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../styles/Nav.css';
-
 export default () => {
   const handleClick = (id) => {
     var elmnt = document.getElementById(id)

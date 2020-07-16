@@ -1,7 +1,6 @@
 import React from 'react';
 
-import '../styles/main.css';
-import '../styles/App.css'
+import '../styles/Main.scss';
 import About from './About';
 import Nav from './Nav';
 import UpcomingEvents from './UpcomingEvents';
@@ -13,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <About />
       <div className="container">
-        <About />
         <UpcomingEvents />
         <Slack />
         <ContactForm />
