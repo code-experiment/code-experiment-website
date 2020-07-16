@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import '../styles/Randomizer.scss'
+
 export default () => {
   const [ name, setName ] = useState("")
   const [ names, setNames ] = useState([])
@@ -18,8 +20,6 @@ export default () => {
     setName("")
   }
 
-  console.log(results)
-
   const handleRandomizeClick = (e, names) => {
     e.preventDefault()
     // console.log(names, e)
@@ -33,18 +33,18 @@ export default () => {
   }
 
   return (
-    <div style={{ width: "100%", marginTop: 50, marginBottom: 50 }}>
+    <div className="randomizer-container">
       <div>
-        <div style={{ paddingTop: "10px", paddingBottom: "10px", textAlign: "center" }}>
+        <div className="randomizer-names-heading">
           Names
         </div>
 
-        <div style={{ width: "100%", backgroundColor: "#f8f8ff", minHeight: "100px", borderRadius: "5px", boxShadow: "rgba(0, 0, 0, 0.05) 0px 2px 6px 1px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridAutoRows: "minmax(100px, auto)", paddingBottom: 20, border: "2px solid #22223b", flexWrap: "wrap" }}>
+        <div className="randomizer-names-container">
           {
             names.map((name, idx) => {
               return (
-                <div key={idx} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div style={{ paddingTop: 50, paddingLeft: 20, paddingRight: 20, textAlign: "center", minWidth: "20px", height: "100%", overflowWrap: "break-word" }}>
+                <div className="randomizer-names-wrapper" key={idx}>
+                  <div className="randomizer-names-name">
                     {name} 
                   </div> 
                 </div>
@@ -54,46 +54,46 @@ export default () => {
         </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "2em" }}>
-        <div style={{ width: "60%" }}>
+      <div className="randomizer-form-container">
+        <div className="randomizer-input-wrapper">
           <input 
             placeholder="Add a name!"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            style={{ width: "100%", padding: "1em", border: "2px solid #22223b", outline: "none", borderRadius: ".25em" }}
+            className="randomizer-input"
           />
         </div>
 
-        <div style={{ width: "10%" }} />
+        <div className="randomizer-form-spacing" />
 
-        <div style={{ width: "30%", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-          <div style={{ width: "45%" }}>
-            <button onClick={handleClick} style={{ backgroundColor: "#22223b", color: "#F88E00", borderRadius: ".25em", cursor: "pointer", outline: "none", width: "100%", padding: "1em", border: "1px solid transparent" }}>
+        <div className="randomizer-btns-container">
+          <div className="randomizer-btn-wrapper">
+            <button className="randomizer-btn" onClick={handleClick}>
               Add
             </button>
           </div>
 
-          <div style={{ width: "45%" }}>
-            <button onClick={(e) => handleRandomizeClick(e, names)} style={{ backgroundColor: "#22223b", color: "#F88E00", borderRadius: ".25em", cursor: "pointer", outline: "none", width: "100%", padding: "1em", border: "1px solid transparent" }}>
+          <div className="randomizer-btn-wrapper">
+            <button className="randomizer-btn" onClick={(e) => handleRandomizeClick(e, names)}>
               Randomize
             </button>
           </div>
         </div>
       </div>
 
-      <div style={{ width: "100%" }}>
+      <div className="randomizer-results-container">
         <div>
-          <div style={{ paddingTop: "20px", paddingBottom: "10px", textAlign: "center"}}>
+          <div className="randomizer-results-heading">
             Results
           </div>
 
-          <div style={{ width: "100%", backgroundColor: "#f8f8ff", minHeight: "100px", borderRadius: "5px", boxShadow: "rgba(0, 0, 0, 0.05) 0px 2px 6px 1px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridAutoRows: "minmax(100px, auto)", paddingBottom: 20, border: "2px solid #22223b", flexWrap: "wrap" }}>
+          <div className="randomizer-results-wrapper">
             {
               results.map((pair, idx) => {
                 return (
-                  <div key={`pair-group-${idx}`} style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center" }}>
-                    <div style={{ textDecorationLine: "underline", color: "#F88E00"  }}>
+                  <div className="randomizer-results-pair-wrapper" key={`pair-group-${idx}`}>
+                    <div className="randomizer-results-pair-heading">
                       Group {idx + 1}
                     </div>
 
@@ -101,7 +101,7 @@ export default () => {
                       {
                         pair.map((name, idx) => {
                           return (
-                            <div key={`pair-group-name-${idx}`}>
+                            <div className="randomizer-results-pair-name" key={`pair-group-name-${idx}`}>
                               {name}
                             </div>
                           )
