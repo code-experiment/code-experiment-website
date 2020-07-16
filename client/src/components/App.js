@@ -1,24 +1,19 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import '../styles/main.css';
-import '../styles/App.css'
-import About from './About';
-import Nav from './Nav';
-import UpcomingEvents from './UpcomingEvents';
-import ContactForm from './ContactForm';
-import Slack from './Slack';
+import "../styles/main.css";
+import "../styles/App.css";
+import Utilities from "./Utilities";
+import Home from "./Home";
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      <About />
-      <div className="container">
-        <UpcomingEvents />
-        <Slack />
-        <ContactForm />
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/utilities' component={Utilities} />
+      </Switch>
+    </Router>
   );
 }
 
