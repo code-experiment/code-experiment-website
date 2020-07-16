@@ -1,17 +1,20 @@
-@import './About.scss';
-@import './ContactForm.scss';
-@import './Nav.scss';
-@import './Slack.scss';
-@import './UpcomingEvent.scss';
+@import "./About.scss";
+@import "./ContactForm.scss";
+@import "./Nav.scss";
+@import "./Slack.scss";
+@import "./UpcomingEvent.scss";
+@import "./NoMatch.scss";
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   background-color: whitesmoke;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
