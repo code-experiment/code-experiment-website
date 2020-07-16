@@ -7,6 +7,7 @@ import Nav from './Nav';
 import UpcomingEvents from './UpcomingEvents';
 import ContactForm from './ContactForm';
 import Slack from './Slack';
+import Randomizer from './Randomizer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <UpcomingEvents />
         <Slack />
         <ContactForm />
+        <Randomizer />
       </div>
     </div>
   );
