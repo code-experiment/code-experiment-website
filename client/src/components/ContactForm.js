@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import '../styles/ContactForm.css'
 import api from "../helpers/api";
 
 // Items we need for axios call
