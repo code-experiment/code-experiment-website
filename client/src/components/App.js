@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 import "../styles/Main.scss";
-import Utilities from "./Utilities";
 import Home from "./Home";
+import Utilities from "./Utilities";
+import Timer from './Timer';
 
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/utilities' component={Utilities} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/utilities' component={Utilities} />
+        <Route exact path='/utilities/timer' component={Timer} />
       </Switch>
     </Router>
   );
