@@ -7,8 +7,13 @@ export default () => {
 
   const handleClick = (e) => {
     e.preventDefault()
+    var splitNames = name.split(',')
     var state = [...names]
-    state.push(name)
+
+    splitNames.map((name) => {
+      state.push(name)
+    })
+
     setNames(state)
     setName("")
   }
@@ -28,7 +33,7 @@ export default () => {
   }
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", marginTop: 50, marginBottom: 50 }}>
       <div>
         <div style={{ paddingTop: "10px", paddingBottom: "10px", textAlign: "center" }}>
           Names
@@ -77,42 +82,38 @@ export default () => {
         </div>
       </div>
 
-      <div>
-        {
-          results.length > 0 ? (
-            <div>
-              <div>
-                Results
-              </div>
+      <div style={{ width: "100%" }}>
+        <div>
+          <div style={{ paddingTop: "20px", paddingBottom: "10px", textAlign: "center"}}>
+            Results
+          </div>
 
-              {
-                results.map((pair, idx) => {
-                  return (
-                    <div key={`pair-group-${idx}`}>
-                      <div>
-                        Group {idx + 1}
-                      </div>
-
-                      <div>
-                        {
-                          pair.map((name, idx) => {
-                            return (
-                              <div key={`pair-group-name-${idx}`}>
-                                {name}
-                              </div>
-                            )
-                          })
-                        }
-                      </div>
+          <div style={{ width: "100%", backgroundColor: "#f8f8ff", minHeight: "100px", borderRadius: "5px", boxShadow: "rgba(0, 0, 0, 0.05) 0px 2px 6px 1px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridAutoRows: "minmax(100px, auto)", paddingBottom: 20, border: "2px solid #22223b", flexWrap: "wrap" }}>
+            {
+              results.map((pair, idx) => {
+                return (
+                  <div key={`pair-group-${idx}`} style={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center" }}>
+                    <div style={{ textDecorationLine: "underline", color: "#F88E00"  }}>
+                      Group {idx + 1}
                     </div>
-                  )
-                })
-              }
-            </div>
-          ) : (
-            <div />
-          )
-        }
+
+                    <div>
+                      {
+                        pair.map((name, idx) => {
+                          return (
+                            <div key={`pair-group-name-${idx}`}>
+                              {name}
+                            </div>
+                          )
+                        })
+                      }
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
       </div>
     </div>
   )
