@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default () => {
   const [ name, setName ] = useState("")
   const [ names, setNames ] = useState([])
-  const [ result, setResult ] = useState([])
+  const [ results, setResults ] = useState([])
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -13,7 +13,7 @@ export default () => {
     setName("")
   }
 
-  console.log(result)
+  console.log(results)
 
   const handleRandomizeClick = (e, names) => {
     e.preventDefault()
@@ -22,38 +22,32 @@ export default () => {
     newNames.reduce(function(result, value, index, array) {
       if (index % 2 === 0)
         result.push(array.slice(index, index + 2));
-      setResult(result)
+      setResults(result)
       return result
     }, []);
   }
 
   return (
     <div style={{ width: "100%" }}>
-      {
-        names.length > 0 ? (
-          <div>
-            <div style={{ paddingTop: "10px", paddingBottom: "10px", textAlign: "center" }}>
-              Names
-            </div>
+      <div>
+        <div style={{ paddingTop: "10px", paddingBottom: "10px", textAlign: "center" }}>
+          Names
+        </div>
 
-            <div style={{ width: "100%", backgroundColor: "#f8f8ff", minHeight: "100px", borderRadius: "5px", boxShadow: "rgba(0, 0, 0, 0.05) 0px 2px 6px 1px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridAutoRows: "minmax(100px, auto)", paddingBottom: 20, border: "2px solid #22223b", flexWrap: "wrap" }}>
-              {
-                names.map((name, idx) => {
-                  return (
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <div key={idx} style={{ paddingTop: 50, paddingLeft: 20, paddingRight: 20, textAlign: "center", minWidth: "20px", height: "100%", overflowWrap: "break-word" }}>
-                        {name} 
-                      </div> 
-                    </div>
-                  )
-                })
-              }
-            </div>
-          </div>
-        ) : (
-          <div />
-        )
-      }
+        <div style={{ width: "100%", backgroundColor: "#f8f8ff", minHeight: "100px", borderRadius: "5px", boxShadow: "rgba(0, 0, 0, 0.05) 0px 2px 6px 1px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridAutoRows: "minmax(100px, auto)", paddingBottom: 20, border: "2px solid #22223b", flexWrap: "wrap" }}>
+          {
+            names.map((name, idx) => {
+              return (
+                <div key={idx} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ paddingTop: 50, paddingLeft: 20, paddingRight: 20, textAlign: "center", minWidth: "20px", height: "100%", overflowWrap: "break-word" }}>
+                    {name} 
+                  </div> 
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
 
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "2em" }}>
         <div style={{ width: "60%" }}>
@@ -84,7 +78,41 @@ export default () => {
       </div>
 
       <div>
-        result
+        {
+          results.length > 0 ? (
+            <div>
+              <div>
+                Results
+              </div>
+
+              {
+                results.map((pair, idx) => {
+                  return (
+                    <div key={`pair-group-${idx}`}>
+                      <div>
+                        Group {idx + 1}
+                      </div>
+
+                      <div>
+                        {
+                          pair.map((name, idx) => {
+                            return (
+                              <div key={`pair-group-name-${idx}`}>
+                                {name}
+                              </div>
+                            )
+                          })
+                        }
+                      </div>
+                    </div>
+                  )
+                })
+              }
+            </div>
+          ) : (
+            <div />
+          )
+        }
       </div>
     </div>
   )
