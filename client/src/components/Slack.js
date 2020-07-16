@@ -7,7 +7,7 @@ export default () => {
     <div className="slack-wrapper" id="slack">
       <div className="slack-logo-wrapper">
         <a
-          href="https://join.slack.com/t/codeassistworkspace/shared_invite/zt-frl94kyr-v7QepaQJKDG1NRh0vPdRhQ"
+          href="https://join.slack.com/t/code-experiment/shared_invite/zt-founos13-TUgJVFsUW04zQEsDh2fIlA"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -16,7 +16,7 @@ export default () => {
       </div>
       <a
         className="slack-link-text"
-        href="https://join.slack.com/t/codeassistworkspace/shared_invite/zt-frl94kyr-v7QepaQJKDG1NRh0vPdRhQ"
+        href="https://join.slack.com/t/code-experiment/shared_invite/zt-founos13-TUgJVFsUW04zQEsDh2fIlA"
         target="_blank"
         rel="noopener noreferrer"
       >
