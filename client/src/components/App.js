@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <About />
       <div className="container">
-        <About />
         <UpcomingEvents />
         <Slack />
         <ContactForm />
