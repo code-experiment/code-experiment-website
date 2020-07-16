@@ -1,8 +1,5 @@
 import React from 'react'
 
-import '../styles/About.css'
-import '../styles/main.css'
-
 export default () => {
   return (
     <div id="about">
