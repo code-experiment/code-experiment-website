@@ -43,6 +43,7 @@ const Timer = () => {
 
     return (
         <div>
+            <h1>Very Cool Timer</h1>
             {!isStarted ? (
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input
