@@ -3,18 +3,23 @@ import { useForm } from "react-hook-form";
 import moment from "moment";
 
 const Timer = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
-
     const [isStarted, setIsStarted] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
-    const [hours, setHours] = useState(0);
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(0);
-    const [timeLeft, setTimeLeft] = useState(125);
+    const [hours, setHours] = useState("00");
+    const [minutes, setMinutes] = useState("00");
+    const [seconds, setSeconds] = useState("00");
+    const [timeLeft, setTimeLeft] = useState(5000);
+
+    const { register, handleSubmit, watch, errors } = useForm();
+
+    const onSubmit = (data) => console.log(data);
+
+    const handleClick = () => {
+        setIsRunning(!isRunning);
+    };
 
     useEffect(() => {
         if (isRunning && timeLeft > 0) {
-            console.log(moment.duration(timeLeft, "seconds"));
             const interval = setInterval(
                 () => setTimeLeft(timeLeft - 1),
                 1000
@@ -23,33 +28,26 @@ const Timer = () => {
         }
     });
 
-    const handleClick = () => {
-        setIsRunning(!isRunning);
-        if (!isStarted) {
-            setIsStarted(!isStarted);
-        }
-    };
-
     return (
         <div>
             {!isStarted ? (
-                <form action="">
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <input
-                        type="text"
-                        placeholder="hours"
                         name="hours"
+                        defaultValue={hours}
+                        ref={register}
                     />
                     <input
-                        type="text"
-                        placeholder="minutes"
                         name="minutes"
+                        defaultValue={minutes}
+                        ref={register}
                     />
                     <input
-                        type="text"
-                        placeholder="seconds"
                         name="seconds"
+                        defaultValue={seconds}
+                        ref={register}
                     />
-                    <button onClick={handleClick}>Start</button>
+                    <button type="submit">Start</button>
                 </form>
             ) : (
                 <div>
@@ -82,7 +80,7 @@ const Timer = () => {
                                   ._data.seconds}
                     </h1>
                     <button onClick={handleClick}>
-                        {isRunning ? 'Pause' : 'Resume'}
+                        {isRunning ? "Pause" : "Resume"}
                     </button>
                 </div>
             )}
