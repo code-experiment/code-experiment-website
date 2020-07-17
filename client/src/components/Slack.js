@@ -1,6 +1,6 @@
 import React from 'react'
 
-import slackLogo from '../images/Slack_Mark_Web.png'
+import slackLogo from '../assets/images/Slack_Mark_Web.png'
 
 export default () => {
   return (

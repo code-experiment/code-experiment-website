@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import '../styles/Main.scss';
 import Home from "./Home";
 import NoMatch from "./NoMatch";
+import Timer from './Timer';
 import Utilities from "./Utilities";
 import Randomizer from './Randomizer';
 
@@ -11,9 +12,10 @@ function App() {
   return (
    <Router>
       <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/utilities' component={Utilities} />
-        <Route path='/randomizer' component={Randomizer} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/utilities' component={Utilities} />
+        <Route exact path='/utilities/timer' component={Timer} />
+        <Route exact path='/randomizer' component={Randomizer} />
         <Route component={NoMatch} />
       </Switch>
     </Router>
