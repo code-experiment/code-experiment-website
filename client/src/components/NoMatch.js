@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import tbot from "../images/tbot.png";
+import tbot from "../assets/images/tbot.png";
 
 export default () => {
   return (
