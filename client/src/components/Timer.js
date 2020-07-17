@@ -1,20 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Timer = () => {
-    const [hours, setHours] = useState(5);
-    const [minutes, setMinutes] = useState(5);
-    const [seconds, setSeconds] = useState(5);
+    const [isRunning, setIsRunning] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0)
+    const [timeLeft, setTimeLeft] = useState(5);
+
+    useEffect(() => {
+        if (isRunning && timeLeft > 0) {
+            const interval = setInterval(
+                () => setTimeLeft(timeLeft - 1),
+                1000
+            );
+            return () => clearInterval(interval);
+        }
+    });
 
     const handleStartClick = () => {
-        console.log("click");
+        setIsRunning(true);
     };
 
     return (
         <div>
             <h1>
-                {hours < 10 ? `0${hours}` : { hours }}:
-                {minutes < 10 ? `0${minutes}` : { minutes }}:
-                {seconds < 10 ? `0${seconds}` : { seconds }}
+                {timeLeft}
             </h1>
 
             <button onClick={handleStartClick}>Start</button>
