@@ -55,7 +55,7 @@ const Timer = () => {
     const timer = moment.duration(timeLeft, "seconds")._data;
 
     return (
-        <div>
+        <div className='timer-wrapper'>
             <h1>Very Cool Timer</h1>
             {!isStarted ? (
                 <form onSubmit={handleSubmit(onSubmit)}>
