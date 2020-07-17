@@ -99,7 +99,7 @@ const Timer = () => {
                             ? "Pause"
                             : "Resume"}
                     </button>
-                    {isStarted ? (
+                    {isStarted && timeLeft > 0 ? (
                         <button onClick={handleCancelClick}>
                             Cancel
                         </button>
