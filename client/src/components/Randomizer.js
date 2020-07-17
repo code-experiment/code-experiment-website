@@ -14,9 +14,7 @@ export default () => {
       var splitNames = name.split(',')
       var state = [...names]
   
-      splitNames.map((name) => {
-        state.push(name.trim())
-      })
+      splitNames.map((name) => state.push(name.trim()))
   
       setNames(state)
       setName("")
