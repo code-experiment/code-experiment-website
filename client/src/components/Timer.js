@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import moment from "moment";
+import { Howl } from "howler";
+
+import chiptune from "../assets/sounds/chiptune-loop.wav";
 
 const Timer = () => {
+    const alarm = new Howl({
+        src: [chiptune],
+    });
+
     const [isStarted, setIsStarted] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
     const [timeLeft, setTimeLeft] = useState(5000);
@@ -22,6 +29,7 @@ const Timer = () => {
     const handleClick = () => {
         if (timeLeft === 0) {
             setIsStarted(!isStarted);
+            alarm.stop();
         }
         setIsRunning(!isRunning);
     };
@@ -38,6 +46,9 @@ const Timer = () => {
                 1000
             );
             return () => clearInterval(interval);
+        }
+        if (timeLeft === 0 && isStarted) {
+            alarm.play();
         }
     });
 
