@@ -15,7 +15,7 @@ function App() {
         <Route exact path='/' component={Home} />
         <Route exact path='/utilities' component={Utilities} />
         <Route exact path='/utilities/timer' component={Timer} />
-        <Route exact path='/randomizer' component={Randomizer} />
+        <Route exact path='/utilities/randomizer' component={Randomizer} />
         <Route component={NoMatch} />
       </Switch>
     </Router>
