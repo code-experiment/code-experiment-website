@@ -14,7 +14,7 @@ export default () => {
   return (
     <div className="nav-bar-wrapper">
       <div className="container nav-bar-container">
-        <div className="logo-container">
+        <div className="logo-container" onClick={() => handleClick("about")}>
           Code Expirement
         </div>
 
