@@ -52,6 +52,8 @@ const Timer = () => {
         }
     });
 
+    const timer = moment.duration(timeLeft, "seconds")._data;
+
     return (
         <div>
             <h1>Very Cool Timer</h1>
@@ -77,32 +79,17 @@ const Timer = () => {
             ) : (
                 <div>
                     <h1>
-                        {moment.duration(timeLeft, "seconds")._data
-                            .hours < 10
-                            ? `0${
-                                  moment.duration(timeLeft, "seconds")
-                                      ._data.hours
-                              }`
-                            : moment.duration(timeLeft, "seconds")
-                                  ._data.hours}
+                        {timer.hours < 10
+                            ? `0${timer.hours}`
+                            : timer.hours}
                         :
-                        {moment.duration(timeLeft, "seconds")._data
-                            .minutes < 10
-                            ? `0${
-                                  moment.duration(timeLeft, "seconds")
-                                      ._data.minutes
-                              }`
-                            : moment.duration(timeLeft, "seconds")
-                                  ._data.minutes}
+                        {timer.minutes < 10
+                            ? `0${timer.minutes}`
+                            : timer.minutes}
                         :
-                        {moment.duration(timeLeft, "seconds")._data
-                            .seconds < 10
-                            ? `0${
-                                  moment.duration(timeLeft, "seconds")
-                                      ._data.seconds
-                              }`
-                            : moment.duration(timeLeft, "seconds")
-                                  ._data.seconds}
+                        {timer.seconds < 10
+                            ? `0${timer.seconds}`
+                            : timer.seconds}
                     </h1>
                     <button onClick={handleClick}>
                         {timeLeft === 0
