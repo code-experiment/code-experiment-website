@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 export default () => {
   return (
-    <div>
+    <div className="utilities-wrapper">
       <h1>Utilities Page</h1>
-      <Link to='/'>Home</Link>
+      <Link to='/utilities/randomizer'>Randomizer</Link>
+      <Link to='/utilities/timer'>Timer</Link>
     </div>
   );
 };

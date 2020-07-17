@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import moment from "moment";
 import { Howl } from "howler";
 
-import chiptune from "../assets/sounds/chiptune-loop.wav";
+import chiptune from "../../assets/sounds/chiptune-loop.wav";
 
 const Timer = () => {
     const alarm = new Howl({
@@ -55,7 +55,7 @@ const Timer = () => {
     const timer = moment.duration(timeLeft, "seconds")._data;
 
     return (
-        <div>
+        <div className='timer-wrapper'>
             <h1>Very Cool Timer</h1>
             {!isStarted ? (
                 <form onSubmit={handleSubmit(onSubmit)}>
