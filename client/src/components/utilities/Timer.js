@@ -23,7 +23,7 @@ const Timer = () => {
                 parseInt(data.seconds)
         );
         setIsStarted(!isStarted);
-        setIsRunning(!isRunning);
+        setIsRunning(true);
     };
 
     const handleClick = () => {
