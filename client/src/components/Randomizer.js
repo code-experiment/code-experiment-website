@@ -15,7 +15,7 @@ export default () => {
       var state = [...names]
   
       splitNames.map((name) => {
-        state.push(name)
+        state.push(name.trim())
       })
   
       setNames(state)
@@ -25,11 +25,14 @@ export default () => {
 
   const handleRandomizeClick = (e, names) => {
     e.preventDefault()
-    // console.log(names, e)
     var newNames = names.sort(() => Math.random() - 0.5)
     newNames.reduce(function(result, value, index, array) {
       if (index % 2 === 0)
-        result.push(array.slice(index, index + 2));
+        if (array.slice(index, index + 2).length === 1) {
+          result[result.length - 1].push(array.slice(index, index + 2))
+        } else {
+          result.push(array.slice(index, index + 2));
+        }
       setResults(result)
       return result
     }, []);
@@ -104,7 +107,19 @@ export default () => {
                       {
                         pair.map((name, idx) => {
                           return (
-                            <div className="randomizer-results-pair-name" key={`pair-group-name-${idx}`}>
+                            <div className="randomizer-results-pair-text" key={`pair-group-name-${idx}`}>
+                              {
+                                idx === 0 ? (
+                                  <div className="randomizer-results-assigned-task">
+                                    Driver
+                                  </div>
+                                ) : (
+                                  <div className="randomizer-results-assigned-task">
+                                    Navigator
+                                  </div>
+                                )
+                              }
+
                               {name}
                             </div>
                           )
