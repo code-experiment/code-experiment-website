@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import moment from "moment";
 import { Howl } from "howler";
 
-import chiptune from "../assets/sounds/chiptune-loop.wav";
+import chiptune from "../../assets/sounds/chiptune-loop.wav";
 
 const Timer = () => {
     const alarm = new Howl({

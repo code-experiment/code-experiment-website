@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./Nav";
 import Home from "./Home";
 import NoMatch from "./NoMatch";
-import Timer from './Timer';
 import Utilities from "./Utilities";
-import Randomizer from './Randomizer';
+import Randomizer from './utilities/Randomizer';
+import Timer from './utilities/Timer';
 
 import '../styles/Main.scss';
 
