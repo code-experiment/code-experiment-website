@@ -26,6 +26,11 @@ const Timer = () => {
         setIsRunning(!isRunning);
     };
 
+    const handleCancelClick = () => {
+        setIsStarted(!isStarted);
+        setIsRunning(!isRunning);
+    };
+
     useEffect(() => {
         if (isRunning && timeLeft > 0) {
             const interval = setInterval(
@@ -94,7 +99,11 @@ const Timer = () => {
                             ? "Pause"
                             : "Resume"}
                     </button>
-                    {isStarted ? <button>Cancel</button> : null}
+                    {isStarted ? (
+                        <button onClick={handleCancelClick}>
+                            Cancel
+                        </button>
+                    ) : null}
                 </div>
             )}
         </div>
