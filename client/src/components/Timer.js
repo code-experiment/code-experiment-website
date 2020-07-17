@@ -5,16 +5,24 @@ import moment from "moment";
 const Timer = () => {
     const [isStarted, setIsStarted] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
-    const [hours, setHours] = useState("00");
-    const [minutes, setMinutes] = useState("00");
-    const [seconds, setSeconds] = useState("00");
     const [timeLeft, setTimeLeft] = useState(5000);
 
     const { register, handleSubmit, watch, errors } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        setTimeLeft(
+            parseInt(data.hours) * 3600 +
+                parseInt(data.minutes) * 60 +
+                parseInt(data.seconds)
+        );
+        setIsStarted(!isStarted);
+        setIsRunning(!isRunning);
+    };
 
     const handleClick = () => {
+        if (timeLeft === 0) {
+            setIsStarted(!isStarted);
+        }
         setIsRunning(!isRunning);
     };
 
@@ -34,17 +42,17 @@ const Timer = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input
                         name="hours"
-                        defaultValue={hours}
+                        defaultValue="00"
                         ref={register}
                     />
                     <input
                         name="minutes"
-                        defaultValue={minutes}
+                        defaultValue="00"
                         ref={register}
                     />
                     <input
                         name="seconds"
-                        defaultValue={seconds}
+                        defaultValue="00"
                         ref={register}
                     />
                     <button type="submit">Start</button>
@@ -80,8 +88,13 @@ const Timer = () => {
                                   ._data.seconds}
                     </h1>
                     <button onClick={handleClick}>
-                        {isRunning ? "Pause" : "Resume"}
+                        {timeLeft === 0
+                            ? "Reset"
+                            : isRunning
+                            ? "Pause"
+                            : "Resume"}
                     </button>
+                    {isStarted ? <button>Cancel</button> : null}
                 </div>
             )}
         </div>
