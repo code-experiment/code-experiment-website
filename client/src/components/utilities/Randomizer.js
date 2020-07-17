@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import '../../styles/Randomizer.scss'
-
 export default () => {
   const [ name, setName ] = useState("")
   const [ names, setNames ] = useState([])
