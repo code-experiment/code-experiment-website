@@ -12,18 +12,34 @@ const Timer = () => {
 
     const [isStarted, setIsStarted] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
-    const [timeLeft, setTimeLeft] = useState(5000);
+    const [timeLeft, setTimeLeft] = useState(0);
+    const [error, setError] = useState(false);
 
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        setTimeLeft(
+        const timeInSec =
             parseInt(data.hours) * 3600 +
-                parseInt(data.minutes) * 60 +
-                parseInt(data.seconds)
-        );
-        setIsStarted(!isStarted);
-        setIsRunning(true);
+            parseInt(data.minutes) * 60 +
+            parseInt(data.seconds);
+        if (timeInSec === 0) {
+            setError(true);
+        } else {
+            setError(false);
+            setTimeLeft(timeInSec);
+            setIsStarted(!isStarted);
+            setIsRunning(true);
+        }
+    };
+
+    const errorMessage = () => {
+        if (error) {
+            return (
+                <p className="timer-error-message">
+                    Please enter a time
+                </p>
+            );
+        }
     };
 
     const handleClick = () => {
@@ -55,27 +71,30 @@ const Timer = () => {
     const timer = moment.duration(timeLeft, "seconds")._data;
 
     return (
-        <div className='timer-wrapper'>
+        <div className="timer-wrapper">
             <h1>Very Cool Timer</h1>
             {!isStarted ? (
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input
-                        name="hours"
-                        defaultValue="00"
-                        ref={register}
-                    />
-                    <input
-                        name="minutes"
-                        defaultValue="00"
-                        ref={register}
-                    />
-                    <input
-                        name="seconds"
-                        defaultValue="00"
-                        ref={register}
-                    />
-                    <button type="submit">Start</button>
-                </form>
+                <div className="form-wrapper">
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input
+                            name="hours"
+                            defaultValue="00"
+                            ref={register}
+                        />
+                        <input
+                            name="minutes"
+                            defaultValue="00"
+                            ref={register}
+                        />
+                        <input
+                            name="seconds"
+                            defaultValue="00"
+                            ref={register}
+                        />
+                        <button type="submit">Start</button>
+                    </form>
+                    {errorMessage()}
+                </div>
             ) : (
                 <div>
                     <h1>
