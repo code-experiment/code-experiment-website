@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => {
   return (
-    <div id="about">
+    <div id="About" className="about-wrapper">
       <div className="about-content container">
         <div className="about-main-content">
           <div className="about-main-content-heading">

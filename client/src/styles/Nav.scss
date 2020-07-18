@@ -23,15 +23,13 @@
 }
 
 .links-inner-wrapper {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
 .link-wrapper {
-  width: 80px;
+  padding: 0 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,20 +37,20 @@
 
 .link {
   background-color: #22223b;
-  border: 0px solid transparent;
+  border: 1px solid transparent;
   color: #F88E00;
-  transition: .2s ease-in-out;
+  transition: .5s ease-in-out;
   text-decoration: none;
   cursor: pointer;
 }
 
 .link:hover {
-  letter-spacing: 1px;
+  color: #ffffff;
 }
 
-.link:focus {
-  outline: none;
-  border-bottom: 1px solid #F88E00;
+.active {
+  color: #ffffff;
+  border-bottom: 1px solid white;
 }
 
 @media only screen and (max-width: 650px) {
