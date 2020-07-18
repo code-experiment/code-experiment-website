@@ -23,7 +23,7 @@ export default () => {
     }
   }
   return (
-    <div id="upcoming-events">
+    <div id="Events" className="upcoming-events">
       <div className="event-header">
         <h1>Upcoming Event</h1>
       </div>

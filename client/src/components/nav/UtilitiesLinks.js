@@ -5,13 +5,13 @@ export default () => {
   return (
     <>
       <div className="link-wrapper">
-        <NavLink to="/utilities">Utilities</NavLink>
+        <NavLink exact to="/utilities" className="link">Utilities</NavLink>
       </div>
       <div className="link-wrapper">
-        <NavLink to="/utilities/timer">Timer</NavLink>
+        <NavLink to="/utilities/timer" className="link">Timer</NavLink>
       </div>
       <div className="link-wrapper">
-        <NavLink to="/utilities/randomizer">Randomizer</NavLink>
+        <NavLink to="/utilities/randomizer" className="link">Randomizer</NavLink>
       </div>
     </>
   )

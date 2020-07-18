@@ -35,9 +35,9 @@ export default () => {
     })
   }
   return (
-    <div className="contact-form-wrapper" id="contact-form-id">
+    <div className="contact-form-wrapper" id="Contact">
       <h1 className="contact-form-header-text">Contact Us</h1>
-      <form onSubmit={handleSubmit} id="contact-form">
+      <form onSubmit={handleSubmit} class="contact-form">
         <input
           placeholder="name"
           type="text"

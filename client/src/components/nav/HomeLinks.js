@@ -1,23 +1,49 @@
 import React from 'react';
 
 export default (props) => {
-  const { handleClick } = props
+  const { isActive, setIsActive } = props
+
+  const handleNavClick = (event) => {
+    setIsActive(event.target.innerHTML)
+    let elmnt = document.getElementById(event.target.innerHTML)
+    elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
+  }
   return (
     <>
       <div className="link-wrapper">
-        <button onClick={() => handleClick("about")} className="link">About</button>
+        <div
+          onClick={(event) => handleNavClick(event, "about")}
+          className={`link ${isActive === 'About' ? 'active' : ''}`}
+        >
+          About
+        </div>
       </div>
 
       <div className="link-wrapper">
-        <button onClick={() => handleClick("upcoming-events")} className="link">Events</button>
+        <div
+          onClick={(event) => handleNavClick(event)}
+          className={`link ${isActive === 'Events' ? 'active' : ''}`}
+        >
+          Events
+        </div>
       </div>
       
       <div className="link-wrapper">
-        <button onClick={() => handleClick("slack")} className="link">Slack</button>
+        <div
+          onClick={(event) => handleNavClick(event)}
+          className={`link ${isActive === 'Slack' ? 'active' : ''}`}
+        >
+          Slack
+        </div>
       </div>
 
       <div className="link-wrapper">
-        <button onClick={() => handleClick("contact-form-id")} className="link">Contact</button>
+        <div
+          onClick={(event) => handleNavClick(event)}
+          className={`link ${isActive === 'Contact' ? 'active' : ''}`}
+        >
+          Contact
+        </div>
       </div>
     </>
   )
