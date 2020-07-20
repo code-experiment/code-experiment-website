@@ -1,3 +1,32 @@
-.timer-wrapper {
-    padding-top: 60px;
+.timer-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .window {
+        min-width: 300px;
+
+        .form-wrapper {
+            padding-top: 5px;
+
+            .time-input {
+                display: flex;
+            }
+        }
+
+        .countdown-display {
+            background-color: black;
+            color: red;
+            font-size: 4.5em;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .window-button-wrapper {
+            padding-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
 }
