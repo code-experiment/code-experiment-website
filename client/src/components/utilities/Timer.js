@@ -3,10 +3,6 @@ import { useForm } from "react-hook-form";
 import moment from "moment";
 import { Howl } from "howler";
 
-import "98.css";
-
-import upButton from "../../assets/images/button-up.svg";
-import downButton from "../../assets/images/button-down.svg";
 import chiptune from "../../assets/sounds/chiptune-loop.wav";
 
 const Timer = () => {
@@ -72,26 +68,6 @@ const Timer = () => {
         }
     };
 
-    const incrementField = (type) => {
-        if (type === "hours") {
-            setHours(parseInt(hours) + 1);
-        } else if (type === "minutes") {
-            setMinutes(parseInt(minutes) + 1);
-        } else if (type === "seconds") {
-            setSeconds(parseInt(seconds) + 1);
-        }
-    };
-
-    const decrementField = (type) => {
-        if (type === "hours" && hours > 0) {
-            setHours(parseInt(hours) - 1);
-        } else if (type === "minutes" && minutes > 0) {
-            setMinutes(parseInt(minutes) - 1);
-        } else if (type === "seconds" && seconds > 0) {
-            setSeconds(parseInt(seconds) - 1);
-        }
-    };
-
     const timer = moment.duration(timeLeft, "seconds")._data;
 
     return (
@@ -102,24 +78,6 @@ const Timer = () => {
                         <div className="title-bar-text">
                             Very Cool Timer
                         </div>
-                        <div className="title-bar-controls">
-                            <button
-                                aria-label="Help"
-                                onClick={() =>
-                                    alert(
-                                        "It's just a timer!\nInput a time using your keyboard or the arrow buttons.\nHit the start button.\nWhen time is up, you will hear an alarm."
-                                    )
-                                }
-                            />
-                            <button
-                                aria-label="Close"
-                                onClick={() =>
-                                    alert(
-                                        "If you close this timer, you'll have nothing left to look at.\nI can't let you do that."
-                                    )
-                                }
-                            />
-                        </div>
                     </div>
                     {!isStarted ? (
                         <div className="form-wrapper window-body">
@@ -129,6 +87,7 @@ const Timer = () => {
                                     <div className="hours time-input ">
                                         <input
                                             name="hours"
+                                            type="number"
                                             value={hours}
                                             ref={register}
                                             onChange={(event) =>
@@ -137,28 +96,11 @@ const Timer = () => {
                                                 )
                                             }
                                         />
-                                        <img
-                                            src={upButton}
-                                            alt="up arrow"
-                                            onClick={() =>
-                                                incrementField(
-                                                    "hours"
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={downButton}
-                                            alt="down arrow"
-                                            onClick={() =>
-                                                decrementField(
-                                                    "hours"
-                                                )
-                                            }
-                                        />
                                     </div>
                                     <div className="minutes time-input">
                                         <input
                                             name="minutes"
+                                            type="number"
                                             value={minutes}
                                             ref={register}
                                             onChange={(event) =>
@@ -167,51 +109,16 @@ const Timer = () => {
                                                 )
                                             }
                                         />
-                                        <img
-                                            src={upButton}
-                                            alt="up arrow"
-                                            onClick={() =>
-                                                incrementField(
-                                                    "minutes"
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={downButton}
-                                            alt="down arrow"
-                                            onClick={() =>
-                                                decrementField(
-                                                    "minutes"
-                                                )
-                                            }
-                                        />
                                     </div>
                                     <div className="seconds time-input">
                                         <input
                                             name="seconds"
+                                            type="number"
                                             value={seconds}
                                             ref={register}
                                             onChange={(event) =>
                                                 setSeconds(
                                                     event.target.value
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={upButton}
-                                            alt="up arrow"
-                                            onClick={() =>
-                                                incrementField(
-                                                    "seconds"
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={downButton}
-                                            alt="down arrow"
-                                            onClick={() =>
-                                                decrementField(
-                                                    "seconds"
                                                 )
                                             }
                                         />
