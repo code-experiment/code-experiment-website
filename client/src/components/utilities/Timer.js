@@ -3,23 +3,24 @@ import { useForm } from "react-hook-form";
 import moment from "moment";
 import { Howl } from "howler";
 
-import "98.css";
-
-import upButton from "../../assets/images/button-up.svg";
-import downButton from "../../assets/images/button-down.svg";
 import chiptune from "../../assets/sounds/chiptune-loop.wav";
+import beep from "../../assets/sounds/beep.wav";
 
 const Timer = () => {
     const alarm = new Howl({
         src: [chiptune],
     });
 
+    const countBeep = new Howl({
+        src: [beep],
+    });
+
     const [isStarted, setIsStarted] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
+    const [timeLeft, setTimeLeft] = useState(0);
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
-    const [timeLeft, setTimeLeft] = useState(0);
 
     const { register, handleSubmit } = useForm();
 
@@ -72,27 +73,18 @@ const Timer = () => {
         }
     };
 
-    const incrementField = (type) => {
-        if (type === "hours") {
-            setHours(parseInt(hours) + 1);
-        } else if (type === "minutes") {
-            setMinutes(parseInt(minutes) + 1);
-        } else if (type === "seconds") {
-            setSeconds(parseInt(seconds) + 1);
-        }
-    };
-
-    const decrementField = (type) => {
-        if (type === "hours" && hours > 0) {
-            setHours(parseInt(hours) - 1);
-        } else if (type === "minutes" && minutes > 0) {
-            setMinutes(parseInt(minutes) - 1);
-        } else if (type === "seconds" && seconds > 0) {
-            setSeconds(parseInt(seconds) - 1);
-        }
-    };
-
     const timer = moment.duration(timeLeft, "seconds")._data;
+
+    const countDownBeep = () => {
+        if (
+            timer.hours === 0 &&
+            timer.minutes === 0 &&
+            timer.seconds < 4 &&
+            timer.seconds !== 0
+        ) {
+            countBeep.play();
+        }
+    };
 
     return (
         <div className="timer-container">
@@ -101,24 +93,6 @@ const Timer = () => {
                     <div className="title-bar">
                         <div className="title-bar-text">
                             Very Cool Timer
-                        </div>
-                        <div className="title-bar-controls">
-                            <button
-                                aria-label="Help"
-                                onClick={() =>
-                                    alert(
-                                        "It's just a timer!\nInput a time using your keyboard or the arrow buttons.\nHit the start button.\nWhen time is up, you will hear an alarm."
-                                    )
-                                }
-                            />
-                            <button
-                                aria-label="Close"
-                                onClick={() =>
-                                    alert(
-                                        "If you close this timer, you'll have nothing left to look at.\nI can't let you do that."
-                                    )
-                                }
-                            />
                         </div>
                     </div>
                     {!isStarted ? (
@@ -129,6 +103,8 @@ const Timer = () => {
                                     <div className="hours time-input ">
                                         <input
                                             name="hours"
+                                            type="number"
+                                            autoComplete="off"
                                             value={hours}
                                             ref={register}
                                             onChange={(event) =>
@@ -137,28 +113,12 @@ const Timer = () => {
                                                 )
                                             }
                                         />
-                                        <img
-                                            src={upButton}
-                                            alt="up arrow"
-                                            onClick={() =>
-                                                incrementField(
-                                                    "hours"
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={downButton}
-                                            alt="down arrow"
-                                            onClick={() =>
-                                                decrementField(
-                                                    "hours"
-                                                )
-                                            }
-                                        />
                                     </div>
                                     <div className="minutes time-input">
                                         <input
                                             name="minutes"
+                                            type="number"
+                                            autoComplete="off"
                                             value={minutes}
                                             ref={register}
                                             onChange={(event) =>
@@ -167,51 +127,17 @@ const Timer = () => {
                                                 )
                                             }
                                         />
-                                        <img
-                                            src={upButton}
-                                            alt="up arrow"
-                                            onClick={() =>
-                                                incrementField(
-                                                    "minutes"
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={downButton}
-                                            alt="down arrow"
-                                            onClick={() =>
-                                                decrementField(
-                                                    "minutes"
-                                                )
-                                            }
-                                        />
                                     </div>
                                     <div className="seconds time-input">
                                         <input
                                             name="seconds"
+                                            type="number"
+                                            autoComplete="off"
                                             value={seconds}
                                             ref={register}
                                             onChange={(event) =>
                                                 setSeconds(
                                                     event.target.value
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={upButton}
-                                            alt="up arrow"
-                                            onClick={() =>
-                                                incrementField(
-                                                    "seconds"
-                                                )
-                                            }
-                                        />
-                                        <img
-                                            src={downButton}
-                                            alt="down arrow"
-                                            onClick={() =>
-                                                decrementField(
-                                                    "seconds"
                                                 )
                                             }
                                         />
@@ -225,7 +151,7 @@ const Timer = () => {
                     ) : (
                         <div className="countdown-wrapper window-body">
                             <div className="countdown-display">
-                                <p>
+                                <p onChange={countDownBeep()}>
                                     {timer.hours < 10
                                         ? `0${timer.hours}`
                                         : timer.hours}
