@@ -4,10 +4,15 @@ import moment from "moment";
 import { Howl } from "howler";
 
 import chiptune from "../../assets/sounds/chiptune-loop.wav";
+import beep from "../../assets/sounds/beep.wav";
 
 const Timer = () => {
     const alarm = new Howl({
         src: [chiptune],
+    });
+
+    const countBeep = new Howl({
+        src: [beep],
     });
 
     const [isStarted, setIsStarted] = useState(false);
@@ -69,6 +74,17 @@ const Timer = () => {
     };
 
     const timer = moment.duration(timeLeft, "seconds")._data;
+
+    const countDownBeep = () => {
+        if (
+            timer.hours === 0 &&
+            timer.minutes === 0 &&
+            timer.seconds < 4 &&
+            timer.seconds !== 0
+        ) {
+            countBeep.play();
+        }
+    };
 
     return (
         <div className="timer-container">
@@ -132,7 +148,7 @@ const Timer = () => {
                     ) : (
                         <div className="countdown-wrapper window-body">
                             <div className="countdown-display">
-                                <p>
+                                <p onChange={countDownBeep()}>
                                     {timer.hours < 10
                                         ? `0${timer.hours}`
                                         : timer.hours}
