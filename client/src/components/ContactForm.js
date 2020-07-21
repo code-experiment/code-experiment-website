@@ -1,27 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import api from "../helpers/api";
 
-// Items we need for axios call
-// subject: req.body.subject,
-// text: `
-//   from: ${req.body.name}
-//   contact: ${req.body.email}
-//   message: ${req.body.text}
-
 export default () => {
-  const { register, handleSubmit, errors, formState } = useForm();
-  const { isSubmitting } = formState;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data, e) => {
+    setIsSubmitting(true);
     JSON.stringify(data);
-    api.post("/", {
-      subject: "New Message From Website",
-      name: data.name,
-      email: data.email,
-      text: data.question,
-    });
-    e.target.reset();
+    api
+      .post("/", {
+        subject: "New Message From Website",
+        name: data.name,
+        email: data.email,
+        text: data.question,
+      })
+      .then(() => {
+        e.target.reset();
+        alert("Submitted");
+        setIsSubmitting(false);
+      })
+      .catch(() => {
+        alert("Server possibly down");
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -52,17 +55,16 @@ export default () => {
         />
         {errors.email && errors.email.message}
 
-        <input
+        <textarea
+          placeholder='Enter your question here.'
           className='contact-form--input'
           name='question'
-          type='textarea'
-          placeholder='Enter your question here.'
           ref={register({ required: "Required" })}
         />
         {errors.question && errors.question.message}
 
         {isSubmitting ? (
-          <button disabled type='button' className='contact-form-btn'>
+          <button disabled className='contact-form-btn'>
             Submitting...
           </button>
         ) : (
