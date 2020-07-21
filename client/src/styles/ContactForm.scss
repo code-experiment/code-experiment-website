@@ -21,11 +21,11 @@
   padding: 1em;
   border: 2px solid #22223b;
   outline: none;
-  border-radius: .25em;
+  border-radius: 0.25em;
 }
 
 .contact-form--input:focus {
-  border: 2px solid #F88E00;
+  border: 2px solid #f88e00;
 }
 
 .contact-form--input + .contact-form--input {
@@ -45,8 +45,8 @@
   margin-bottom: 1em;
   border: none;
   background-color: #22223b;
-  color: #F88E00;
-  border-radius: .25em;
+  color: #f88e00;
+  border-radius: 0.25em;
   cursor: pointer;
   outline: none;
 }
@@ -54,7 +54,6 @@
 .contact-form-btn:hover {
   background-color: #363659;
 }
-
 
 @media only screen and (min-width: 1000px) {
   .contact-form-wrapper {
