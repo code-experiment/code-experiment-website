@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import About from "./About";
 import UpcomingEvents from "./UpcomingEvents";
-import ContactHookForm from "./ContactHookForm";
+import ContactForm from "./ContactForm";
 import Slack from "./Slack";
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
       <div className='container'>
         <UpcomingEvents />
         <Slack />
-        <ContactHookForm />
+        <ContactForm />
       </div>
       <Link to='/utilities'>HI</Link>
     </div>
