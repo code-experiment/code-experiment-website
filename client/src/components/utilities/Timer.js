@@ -104,6 +104,7 @@ const Timer = () => {
                                         <input
                                             name="hours"
                                             type="number"
+                                            autoComplete="off"
                                             value={hours}
                                             ref={register}
                                             onChange={(event) =>
@@ -117,6 +118,7 @@ const Timer = () => {
                                         <input
                                             name="minutes"
                                             type="number"
+                                            autoComplete="off"
                                             value={minutes}
                                             ref={register}
                                             onChange={(event) =>
@@ -130,6 +132,7 @@ const Timer = () => {
                                         <input
                                             name="seconds"
                                             type="number"
+                                            autoComplete="off"
                                             value={seconds}
                                             ref={register}
                                             onChange={(event) =>
