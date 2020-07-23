@@ -1,10 +1,10 @@
 import React from 'react'
 
-import slackLogo from '../images/Slack_Mark_Web.png'
+import slackLogo from '../assets/images/Slack_Mark_Web.png'
 
 export default () => {
   return (
-    <div className="slack-wrapper" id="slack">
+    <div className="slack-wrapper" id="Slack">
       <div className="slack-logo-wrapper">
         <a
           href="https://join.slack.com/t/code-experiment/shared_invite/zt-founos13-TUgJVFsUW04zQEsDh2fIlA"

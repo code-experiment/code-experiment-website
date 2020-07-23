@@ -1,74 +1,78 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
 import api from "../helpers/api";
 
-// Items we need for axios call
-// subject: req.body.subject,
-// text: `
-//   from: ${req.body.name} 
-//   contact: ${req.body.email}
-//   message: ${req.body.text}
-
 export default () => {
-  const [ name, setName ] = useState("")
-  const [ email, setEmail ] = useState("")
-  const [ question, setQuestion ] = useState("")
-  const [ isLoading, setIsLoading ] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data, e) => {
+    setIsSubmitting(true);
+    JSON.stringify(data);
+    api
+      .post("/", {
+        subject: "New Message From Website",
+        name: data.name,
+        email: data.email,
+        text: data.question,
+      })
+      .then(() => {
+        e.target.reset();
+        alert("Submitted");
+        setIsSubmitting(false);
+      })
+      .catch(() => {
+        alert("Server possibly down");
+        setIsSubmitting(false);
+      });
+  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    setIsLoading(true)
-    console.log(name, email, question)
-    api.post('/', {
-      "subject": "New Message From Website",
-      "name": name,
-      "email": email,
-      "text": question
-    }).then((res) => {
-      console.log(res)
-      setName('')
-      setEmail('')
-      setQuestion('')
-      setIsLoading(false)
-    }).catch((err) => {
-      console.log(err)
-    })
-  }
   return (
-    <div className="contact-form-wrapper" id="contact-form-id">
-      <h1 className="contact-form-header-text">Contact Us</h1>
-      <form onSubmit={handleSubmit} id="contact-form">
+    <div className='contact-form-wrapper' id='Contact'>
+      <h1 className='contact-form-header-text'>Contact Us</h1>
+      <form onSubmit={handleSubmit(onSubmit)} className='contact-form'>
         <input
-          placeholder="name"
-          type="text"
-          onChange={(event) => setName(event.target.value)}
-          value={name}
-          className="contact-form--input"
-          />
-
-        <input
-          placeholder="email"
-          type="email"
-          onChange={(event) => setEmail(event.target.value)}
-          value={email}
-          className="contact-form--input"
-          />
-
-        <textarea 
-          placeholder="question"
-          type="textarea"
-          onChange={(event) => setQuestion(event.target.value)}
-          value={question}
-          className="contact-form--input"
+          className='contact-form--input'
+          type='text'
+          placeholder='Name'
+          name='name'
+          ref={register({ required: "Required" })}
         />
-        {
-          isLoading ? (
-            <button type="button" className="contact-form-btn">Sending...</button>
-          ) : (
-            <button type="submit" className="contact-form-btn">Submit</button>
-          )
-        }
+        {errors.name && errors.name.message}
+
+        <input
+          className='contact-form--input'
+          type='email'
+          name='email'
+          placeholder='Email'
+          ref={register({
+            required: "Required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "invalid email address",
+            },
+          })}
+        />
+        {errors.email && errors.email.message}
+
+        <textarea
+          placeholder='Enter your question here.'
+          className='contact-form--input'
+          name='question'
+          ref={register({ required: "Required" })}
+        />
+        {errors.question && errors.question.message}
+
+        {isSubmitting ? (
+          <button disabled className='contact-form-btn'>
+            Submitting...
+          </button>
+        ) : (
+          <button type='submit' className='contact-form-btn'>
+            Submit
+          </button>
+        )}
       </form>
     </div>
   );
-}
+};
