@@ -11,16 +11,16 @@ export default () => {
     modalContentText,
     setModalContentText
   } = useContext(ModalContext)
-
-  if (!modalIsOpen) {
-    return null
-  }
-
+  
   const handleClick = (e) => {
     e.preventDefault();
     setModalHeadingText(false)
     setModalContentText("")
     setModalIsOpen(false)
+  }
+  
+  if (!modalIsOpen) {
+    return null
   }
 
   return (
