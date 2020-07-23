@@ -1,19 +1,41 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import ModalContext from '../contexts/ModalContext'
 
-export default (props) => {
+
+export default () => {
+  const {
+    modalIsOpen,
+    setModalIsOpen,
+    headingText,
+    setHeadingText,
+    contentText,
+    setContentText
+  } = useContext(ModalContext)
+
+  if (!modalIsOpen) {
+    return <div />
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setHeadingText(false)
+    setContentText("")
+    setModalIsOpen(false)
+  }
+
   return (
     <div className="modal-container">
       <div className="modal-content-wrapper">
         <div className="modal-heading-text">
-          { props.headingText ? props.headingText : "Alert" }
+          { headingText ? headingText : "Alert" }
         </div>
 
         <div className="modal-main-content-wrapper">
           <div className="modal-main-content">
-              { props.contentText }
+              { contentText }
           </div>
 
-          <button className="modal-main-content-btn">
+          <button className="modal-main-content-btn" onClick={handleClick}>
             OK
           </button>
         </div>

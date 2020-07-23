@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 
 import api from "../helpers/api";
+import ModalContext from "../contexts/ModalContext";
+import Modal from "../helpers/Modal";
 
 export default () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const {
+    modalIsOpen,
+    setModalIsOpen,
+    setHeadingText,
+    setContentText
+  } = useContext(ModalContext)
+  console.log(modalIsOpen)
   const onSubmit = (data, e) => {
     setIsSubmitting(true);
     JSON.stringify(data);
@@ -18,11 +27,17 @@ export default () => {
       })
       .then(() => {
         e.target.reset();
-        alert("Submitted");
+        setHeadingText("Success!")
+        setContentText("You have successfully submitted the form.")
+        setModalIsOpen(true)
+        // alert("Submitted");
         setIsSubmitting(false);
       })
       .catch(() => {
-        alert("Server possibly down");
+        setHeadingText("Error")
+        setContentText("Server possibly down")
+        setModalIsOpen(true)
+        // alert("Server possibly down");
         setIsSubmitting(false);
       });
   };

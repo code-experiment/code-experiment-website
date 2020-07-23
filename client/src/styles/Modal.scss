@@ -54,11 +54,11 @@
   background-color: #F88E00;
   border: 1px solid transparent;
   border-radius: 5px;
+  cursor: pointer;
 
   &:focus {
     text-decoration: none;
     outline: none;
-    cursor: pointer;
   }
 
   &:active {

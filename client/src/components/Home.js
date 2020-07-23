@@ -10,6 +10,7 @@ import Modal from "../helpers/Modal";
 function Home() {
   return (
     <div className='App'>
+      <Modal />
       <About />
       <div className='container'>
         <UpcomingEvents />
