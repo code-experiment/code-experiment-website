@@ -12,7 +12,7 @@ export default (props) => {
     <>
       <div className="link-wrapper">
         <div
-          onClick={(event) => handleNavClick(event, "about")}
+          onClick={(event) => handleNavClick(event)}
           className={`link ${isActive === 'About' ? 'active' : ''}`}
         >
           About
