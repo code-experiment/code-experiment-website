@@ -11,8 +11,8 @@ function Home() {
   return (
     <div className='App'>
       <Modal />
-      <About />
       <div className='container'>
+        <About />
         <UpcomingEvents />
         <Slack />
         <ContactForm />
