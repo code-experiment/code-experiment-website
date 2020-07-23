@@ -3,7 +3,7 @@ import React from 'react'
 export default () => {
   return (
     <div id="About" className="about-wrapper">
-      <div className="about-content container">
+      <div className="about-content">
         <div className="about-main-content">
           <div className="about-main-content-heading">
             Open Web Development meetup for coders who learn by doing.

@@ -9,8 +9,8 @@ import Slack from "./Slack";
 function Home() {
   return (
     <div className='App'>
-      <About />
       <div className='container'>
+        <About />
         <UpcomingEvents />
         <Slack />
         <ContactForm />
