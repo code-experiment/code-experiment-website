@@ -1,17 +1,16 @@
 import React from 'react'
 
-export default () => {
-  // const height = document.height
+export default (props) => {
   return (
     <div className="modal-container">
       <div className="modal-content-wrapper">
         <div className="modal-heading-text">
-          Alert
+          { props.headingText ? props.headingText : "Alert" }
         </div>
 
         <div className="modal-main-content-wrapper">
           <div className="modal-main-content">
-              Test
+              { props.contentText }
           </div>
 
           <button className="modal-main-content-btn">
