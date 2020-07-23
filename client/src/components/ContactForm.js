@@ -9,8 +9,8 @@ export default () => {
   const { register, handleSubmit, errors } = useForm();
   const {
     setModalIsOpen,
-    setHeadingText,
-    setContentText
+    setModalHeadingText,
+    setModalContentText
   } = useContext(ModalContext)
 
   const onSubmit = (data, e) => {
@@ -25,14 +25,14 @@ export default () => {
       })
       .then(() => {
         e.target.reset();
-        setHeadingText("Success!")
-        setContentText("You have successfully submitted the form.")
+        setModalHeadingText("Success!")
+        setModalContentText("You have successfully submitted the form.")
         setModalIsOpen(true)
         setIsSubmitting(false);
       })
       .catch(() => {
-        setHeadingText("Error")
-        setContentText("Server possibly down")
+        setModalHeadingText("Error")
+        setModalContentText("Server possibly down")
         setModalIsOpen(true)
         setIsSubmitting(false);
       });

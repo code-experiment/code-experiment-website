@@ -6,20 +6,20 @@ export default () => {
   const {
     modalIsOpen,
     setModalIsOpen,
-    headingText,
-    setHeadingText,
-    contentText,
-    setContentText
+    modalHeadingText,
+    setModalHeadingText,
+    modalContentText,
+    setModalContentText
   } = useContext(ModalContext)
 
   if (!modalIsOpen) {
-    return <div />
+    return null
   }
 
   const handleClick = (e) => {
     e.preventDefault();
-    setHeadingText(false)
-    setContentText("")
+    setModalHeadingText(false)
+    setModalContentText("")
     setModalIsOpen(false)
   }
 
@@ -27,12 +27,12 @@ export default () => {
     <div className="modal-container">
       <div className="modal-content-wrapper">
         <div className="modal-heading-text">
-          { headingText ? headingText : "Alert" }
+          { modalHeadingText ? modalHeadingText : "Alert" }
         </div>
 
         <div className="modal-main-content-wrapper">
           <div className="modal-main-content">
-              { contentText }
+              { modalContentText }
           </div>
 
           <button className="modal-main-content-btn" onClick={handleClick}>

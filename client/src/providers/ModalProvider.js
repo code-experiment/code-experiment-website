@@ -3,16 +3,16 @@ import ModalContext from '../contexts/ModalContext'
 
 export default (props) => {
   const [ modalIsOpen, setModalIsOpen ] = useState(false)
-  const [ headingText, setHeadingText ] = useState(false)
-  const [ contentText, setContentText ] = useState(false)
+  const [ modalHeadingText, setModalHeadingText ] = useState(false)
+  const [ modalContentText, setModalContentText ] = useState(false)
 
   const state = {
     modalIsOpen,
     setModalIsOpen,
-    headingText,
-    setHeadingText,
-    contentText,
-    setContentText
+    modalHeadingText,
+    setModalHeadingText,
+    modalContentText,
+    setModalContentText
   }
   
   return (
