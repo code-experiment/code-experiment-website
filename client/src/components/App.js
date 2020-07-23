@@ -9,11 +9,13 @@ import Randomizer from './utilities/Randomizer';
 import Timer from './utilities/Timer';
 
 import '../styles/Main.scss';
+import ModalProvider from "../providers/ModalProvider";
 
 function App() {
   return (
-   <Router>
-     <Nav />
+  <ModalProvider>
+    <Router>
+      <Nav />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/utilities' component={Utilities} />
@@ -22,6 +24,7 @@ function App() {
         <Route component={NoMatch} />
       </Switch>
     </Router>
+  </ModalProvider>
   );
 }
 

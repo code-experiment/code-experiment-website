@@ -5,12 +5,14 @@ import About from "./About";
 import UpcomingEvents from "./UpcomingEvents";
 import ContactForm from "./ContactForm";
 import Slack from "./Slack";
+import Modal from "../helpers/Modal";
 
 function Home() {
   return (
     <div className='App'>
-      <About />
+      <Modal />
       <div className='container'>
+        <About />
         <UpcomingEvents />
         <Slack />
         <ContactForm />
