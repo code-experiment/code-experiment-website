@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 export default (props) => {
   const { isActive, setIsActive } = props
@@ -27,15 +28,6 @@ export default (props) => {
           Events
         </div>
       </div>
-      
-      <div className="link-wrapper">
-        <div
-          onClick={(event) => handleNavClick(event)}
-          className={`link ${isActive === 'Slack' ? 'active' : ''}`}
-        >
-          Slack
-        </div>
-      </div>
 
       <div className="link-wrapper">
         <div
@@ -44,6 +36,15 @@ export default (props) => {
         >
           Contact
         </div>
+      </div>
+
+      <div className="link-wrapper">
+        <Link
+          to='/utilities'
+          className="link"
+        >
+          Utilities
+        </Link>
       </div>
     </>
   )
