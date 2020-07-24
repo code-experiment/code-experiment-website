@@ -1,7 +1,13 @@
 .randomizer-container {
-  width: 100%;
-  padding-top: 50px;
+  width: 80%;
+  padding-top: 90px;
+  height: calc(100% - 80px);
+  min-height: calc(100vh - 80px);
+  margin: 0 auto;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .randomizer-names-heading {
