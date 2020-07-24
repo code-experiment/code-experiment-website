@@ -28,15 +28,6 @@ export default (props) => {
           Events
         </div>
       </div>
-      
-      {/* <div className="link-wrapper">
-        <div
-          onClick={(event) => handleNavClick(event)}
-          className={`link ${isActive === 'Slack' ? 'active' : ''}`}
-        >
-          Slack
-        </div>
-      </div> */}
 
       <div className="link-wrapper">
         <div
@@ -54,12 +45,6 @@ export default (props) => {
         >
           Utilities
         </Link>
-        {/* <div
-          onClick={(event) => handleNavClick(event)}
-          className={`link ${isActive === 'Contact' ? 'active' : ''}`}
-        >
-          Utilities
-        </div> */}
       </div>
     </>
   )
