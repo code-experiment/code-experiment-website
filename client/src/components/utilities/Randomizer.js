@@ -49,9 +49,9 @@ export default () => {
   return (
     <div className="randomizer-container">
       <div>
-        <div className="randomizer-names-heading">
+        <h1 className="randomizer-names-heading">
           Names
-        </div>
+        </h1>
 
         <div className="randomizer-names-container">
           {
@@ -96,9 +96,9 @@ export default () => {
 
       <div className="randomizer-results-container">
         <div>
-          <div className="randomizer-results-heading">
+          <h1 className="randomizer-results-heading">
             Results
-          </div>
+          </h1>
 
           <div className="randomizer-results-wrapper">
             {
