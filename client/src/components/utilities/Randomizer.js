@@ -68,7 +68,7 @@ export default () => {
         </div>
       </div>
 
-      <form className="randomizer-form-container" onClick={handleAddClick}>
+      <form className="randomizer-form-container" onSubmit={handleAddClick}>
         <div className="randomizer-input-wrapper">
           <input 
             placeholder="Add name/names"
