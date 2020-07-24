@@ -1,16 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import ModalContext from '../../contexts/ModalContext'
 
 export default () => {
   const [ name, setName ] = useState("")
   const [ names, setNames ] = useState([])
   const [ results, setResults ] = useState([])
+  const {
+    setModalContentText,
+    setModalIsOpen
+  } = useContext(ModalContext)
 
-  const handleClick = (e) => {
+  const handleAddClick = (e) => {
     e.preventDefault()
 
     if (name !== "") {
-      var splitNames = name.split(',')
-      var state = [...names]
+      const splitNames = name.split(',')
+      const state = [...names]
   
       splitNames.map((name) => state.push(name.trim()))
   
@@ -19,19 +24,23 @@ export default () => {
     }
   }
 
-  const handleRandomizeClick = (e, names) => {
-    e.preventDefault()
-    var newNames = names.sort(() => Math.random() - 0.5)
-    newNames.reduce(function(result, value, index, array) {
-      if (index % 2 === 0)
-        if (array.slice(index, index + 2).length === 1) {
-          result[result.length - 1].push(array.slice(index, index + 2))
-        } else {
-          result.push(array.slice(index, index + 2));
-        }
-      setResults(result)
-      return result
-    }, []);
+  const handleRandomizeClick = () => {
+    if (names.length > 1) {
+      let newNames = names.sort(() => Math.random() - 0.5)
+      newNames.reduce(function(result, _, index, array) {
+        if (index % 2 === 0)
+          if (array.slice(index, index + 2).length === 1) {
+            result[result.length - 1].push(array.slice(index, index + 2))
+          } else {
+            result.push(array.slice(index, index + 2));
+          }
+        setResults(result)
+        return result
+      }, []);
+    } else {
+      setModalContentText('You need more than one person to randomize.')
+      setModalIsOpen(true)
+    }
   }
 
   return (
@@ -56,7 +65,7 @@ export default () => {
         </div>
       </div>
 
-      <div className="randomizer-form-container">
+      <form className="randomizer-form-container" onClick={handleAddClick}>
         <div className="randomizer-input-wrapper">
           <input 
             placeholder="Add name/names"
@@ -67,22 +76,20 @@ export default () => {
           />
         </div>
 
-        <div className="randomizer-form-spacing" />
-
         <div className="randomizer-btns-container">
           <div className="randomizer-btn-wrapper">
-            <button className="randomizer-btn" onClick={handleClick}>
+            <button className="randomizer-btn" type="submit">
               Add
             </button>
           </div>
 
           <div className="randomizer-btn-wrapper">
-            <button className="randomizer-btn" onClick={(e) => handleRandomizeClick(e, names)}>
+            <button type="button" className="randomizer-btn" onClick={handleRandomizeClick}>
               Randomize
             </button>
           </div>
         </div>
-      </div>
+      </form>
 
       <div className="randomizer-results-container">
         <div>
@@ -104,18 +111,6 @@ export default () => {
                         pair.map((name, idx) => {
                           return (
                             <div className="randomizer-results-pair-text" key={`pair-group-name-${idx}`}>
-                              {
-                                idx === 0 ? (
-                                  <div className="randomizer-results-assigned-task">
-                                    Driver
-                                  </div>
-                                ) : (
-                                  <div className="randomizer-results-assigned-task">
-                                    Navigator
-                                  </div>
-                                )
-                              }
-
                               {name}
                             </div>
                           )
