@@ -21,6 +21,9 @@ export default () => {
   
       setNames(state)
       setName("")
+    } else {
+      setModalContentText('You need to have a name to add.')
+      setModalIsOpen(true)
     }
   }
 
