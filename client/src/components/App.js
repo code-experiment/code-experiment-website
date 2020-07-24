@@ -10,12 +10,14 @@ import Timer from './utilities/Timer';
 
 import '../styles/Main.scss';
 import ModalProvider from "../providers/ModalProvider";
+import Modal from "../helpers/Modal";
 
 function App() {
   return (
   <ModalProvider>
     <Router>
       <Nav />
+      <Modal />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/utilities' component={Utilities} />
