@@ -11,8 +11,6 @@
 }
 
 .randomizer-names-heading {
-  padding-top: 10px;
-  padding-bottom: 10px;
   text-align: center;
 }
 
@@ -96,8 +94,6 @@
 }
 
 .randomizer-results-heading {
-  padding-top: 20px;
-  padding-bottom: 10px;
   text-align: center;
 }
 
@@ -129,10 +125,11 @@
 }
 
 .randomizer-results-pair-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+}
+
+.randomizer-results-pair-text + .randomizer-results-pair-text {
+  padding-top: .5em;
 }
 
 .randomizer-results-assigned-task {
