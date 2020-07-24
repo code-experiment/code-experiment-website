@@ -12,7 +12,7 @@ function Home() {
       <div className='container'>
         <About />
         <UpcomingEvents />
-        <Slack />
+        {/* <Slack /> */}
         <ContactForm />
       </div>
       <Link to='/utilities'>HI</Link>
