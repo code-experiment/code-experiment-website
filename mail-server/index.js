@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const nodemailer = require('nodemailer')
-const port = 4444
+const port = process.env.PORT || 4444
 
 app.use(cors())
 app.use(morgan('dev'))
