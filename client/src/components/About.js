@@ -20,7 +20,7 @@ export default () => {
           </div>
         </div>
         <div className="about-secondary-content">
-          <div className="about-secondary-content-item">
+          {/* <div className="about-secondary-content-item">
             Welcome to Code Experiment. Our goal is to help all those at a beginner and intermediate level get a better grasp of web development by hands on experimentation with other coders. While most meetups have you follow along or try to code on your own after the fact, we believe that having a mentor accessible WHILE you’re coding can make all the difference.
           </div>
           <div className="about-secondary-content-item">
@@ -28,7 +28,7 @@ export default () => {
           </div>
           <div className="about-secondary-content-item">
             Every Wednesday at 6pm MT
-          </div>
+          </div> */}
         </div>
       </div>
   </div>
