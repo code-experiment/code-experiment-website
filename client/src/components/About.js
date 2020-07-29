@@ -1,12 +1,14 @@
 import React from 'react'
 
+import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.png'
+
 export default () => {
   return (
     <div id="About" className="about-wrapper">
       <div className="about-content">
         <div className="about-main-content">
           <div className="about-main-content-heading">
-            Open Web Development meetup for coders who learn by doing.
+            Web Development meetup for coders who learn by doing.
           </div>
           <div className="join-now-btn-wrapper">
             <a
@@ -17,6 +19,15 @@ export default () => {
             >
               Join Now
             </a>
+          </div>
+
+          <div style={{ width: "100%", color: "#22223B", fontSize: "1.75rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <div>
+              EVERY WEDNESDAY
+            </div>
+            <div>
+              6PM MST
+            </div>
           </div>
         </div>
         <div className="about-secondary-content">
@@ -29,6 +40,7 @@ export default () => {
           <div className="about-secondary-content-item">
             Every Wednesday at 6pm MT
           </div> */}
+          <img src={Image} alt="Image of Code" style={{ width: "100%" }} />
         </div>
       </div>
   </div>
