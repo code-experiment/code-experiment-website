@@ -4,14 +4,18 @@ import tbot from "../assets/images/tbot.png";
 
 export default () => {
   return (
-    <div class='error_wrapper'>
-      <div class='error_heading'>
-        <h2>
+    <div className='error-wrapper'>
+      <div className='error-heading'>
+        <h1>
           Yikes... Who knows when that page will be available, would you like to{" "}
-          <Link to='/'>Return to Home</Link>?
-        </h2>
+          <span>
+            <Link to='/' className="error-link">Return to Home</Link>?
+          </span>
+        </h1>
       </div>
-      <img src={tbot} alt='' />
+      <div className="error-image-wrapper">
+        <img className="error-image" src={tbot} alt='Error tbot' />
+      </div>
     </div>
   );
 };
