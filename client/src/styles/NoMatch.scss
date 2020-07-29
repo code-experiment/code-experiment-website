@@ -1,20 +1,29 @@
-.error_wrapper {
+.error-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   flex-direction: column;
 }
-.error_wrapper > .error_heading {
+
+.error-heading {
   margin-bottom: 42px;
   text-align: center;
   padding-left: 1em;
   padding-right: 1em;
+  
+  .error-link {
+    text-decoration: none;
+    color: green;
+  }
 }
-a {
-  text-decoration: none;
-  color: green;
-}
-img {
+
+
+.error-image-wrapper {
   width: 50%;
+  margin: 0 auto;
+
+  .error-image {
+    width: 100%;
+  }
 }
