@@ -9,6 +9,7 @@ export default withRouter((props) => {
 
   const handleHomeClick = () => {
     if (props.location.pathname === '/') {
+      // TODO - Check Browser Width and Change scrollIntoView Block to Start based on mobile screen
       setIsActive('')
       document.getElementById('HomeHero').scrollIntoView({ behavior: 'smooth', block: "start" })
     } else {

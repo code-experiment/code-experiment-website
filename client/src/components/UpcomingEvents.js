@@ -31,12 +31,13 @@ export default () => {
 
         <div className="event-date-container">
           <div className="top-date">
-            {nextMeetupDay.toString()} 6:00 PM
+            {nextMeetupDay.toString()}
           </div>
 
           <div className="bottom-date-container">
             <div className="bottom-date">
               {handleRenderingNextDate()}
+              <div style={{ paddingTop: "1rem" }}>6:00 PM</div>
             </div>
           </div>
         </div>

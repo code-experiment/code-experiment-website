@@ -1,24 +1,37 @@
 .upcoming-events {
   height: 100%;
   min-height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .event-header {
   text-align: center;
   width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
   color: #22223B;
 }
 
 .event-date-container {
-  height: 30vh;
+  width: 30%;
+  height: 50vh;
+  margin: 0 auto;
+  border-radius: 10px;
   min-height: 200px;
+  overflow: hidden;
+  box-shadow: 20px 20px 20px #00000029;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  opacity: 1;
 }
 
 .top-date {
   width: 100%;
   height: 20%;
   text-align: center;
-  background-color: #cc0000;
+  background-color: #CE1515;
   color: white;
   font-size: 25px;
   display: flex;
@@ -28,9 +41,9 @@
 
 .bottom-date-container {
   height: 80%;
-  background-color: #f8f8ff;
-  border: 1px solid black;
-  border-top: 1px solid transparent;
+  background-color: #FFFFFF;
+  // border: 1px solid black;
+  // border-top: 1px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,6 +55,7 @@
   background-color: white;
   font-size: 30px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
