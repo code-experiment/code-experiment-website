@@ -39,51 +39,53 @@ export default () => {
   };
 
   return (
-    <div className='contact-form-wrapper' id='Contact'>
-      <h1 className='contact-form-header-text'>Contact Us</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className='contact-form'>
-        <input
-          className='contact-form--input'
-          type='text'
-          placeholder='Name'
-          name='name'
-          ref={register({ required: "Required" })}
-        />
-        {errors.name && errors.name.message}
+    <div className="contact-form-wrapper">
+      <div className='contact-form-container container' id='Contact'>
+        <h1 className='contact-form-header-text'>Contact Us</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className='contact-form'>
+          <input
+            className='contact-form--input'
+            type='text'
+            placeholder='Name'
+            name='name'
+            ref={register({ required: "Required" })}
+          />
+          {errors.name && errors.name.type === "required" && <span className="contact-form-error">This is required</span>}
 
-        <input
-          className='contact-form--input'
-          type='email'
-          name='email'
-          placeholder='Email'
-          ref={register({
-            required: "Required",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "invalid email address",
-            },
-          })}
-        />
-        {errors.email && errors.email.message}
+          <input
+            className='contact-form--input'
+            type='email'
+            name='email'
+            placeholder='Email'
+            ref={register({
+              required: "Required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "invalid email address",
+              },
+            })}
+          />
+          {errors.name && errors.name.type === "required" && <span className="contact-form-error">This is required</span>}
+          {console.log(errors)}
+          <textarea
+            placeholder='Enter your question here.'
+            className='contact-form--input'
+            name='question'
+            ref={register({ required: "Required" })}
+          />
+          {errors.name && errors.name.type === "required" && <span className="contact-form-error">This is required</span>}
 
-        <textarea
-          placeholder='Enter your question here.'
-          className='contact-form--input'
-          name='question'
-          ref={register({ required: "Required" })}
-        />
-        {errors.question && errors.question.message}
-
-        {isSubmitting ? (
-          <button disabled className='contact-form-btn'>
-            Submitting...
-          </button>
-        ) : (
-          <button type='submit' className='contact-form-btn'>
-            Submit
-          </button>
-        )}
-      </form>
+          {isSubmitting ? (
+            <button disabled className='contact-form-btn'>
+              Submitting...
+            </button>
+          ) : (
+            <button type='submit' className='contact-form-btn'>
+              Submit
+            </button>
+          )}
+        </form>
+      </div>
     </div>
   );
 };
