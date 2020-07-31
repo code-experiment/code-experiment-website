@@ -4,7 +4,7 @@ import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.jpg'
 
 export default () => {
   return (
-    <div className="homehero shader">   
+    <div className="homehero shader" id="HomeHero">   
       <div className="about-content container">
         <div className="about-main-content">
           <div className="about-main-content-heading">
