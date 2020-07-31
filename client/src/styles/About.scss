@@ -14,7 +14,6 @@
 }
 
 .about-content {
-  // height: 80vh;
   width: 80%;
   margin: 0 auto;
   height: calc(100vh - 60px);
@@ -24,12 +23,10 @@
 
 .about-main-content {
   width: 40%;
-  // background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  // box-shadow: 10px 10px 10px 1px rgba(0,0,0,0.35);
   border-radius: 10px;
 }
 
@@ -40,10 +37,6 @@
   letter-spacing: 1px;
   text-align: center;
   color: #22223B;
-  // font-size: 2rem;
-  // font-weight: 700;
-  // padding: 1em;
-  // text-align: center;
 }
 
 .join-now-btn-wrapper {
@@ -66,14 +59,11 @@
 
 .about-secondary-content {
   width: 40%;
-  // background-color: white;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // justify-content: space-between;
-  // box-shadow: 10px 10px 10px 1px rgba(0,0,0,0.35);
   border-radius: 10px;
 }
 
