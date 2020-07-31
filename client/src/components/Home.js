@@ -7,11 +7,11 @@ import ContactForm from "./ContactForm";
 function Home() {
   return (
     <div className='App'>
-      <div className='container'>
+      {/* <div className='container'> */}
         <About />
         <UpcomingEvents />
         <ContactForm />
-      </div>
+      {/* </div> */}
     </div>
   );
 }

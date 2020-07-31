@@ -8,8 +8,15 @@
   align-items: center;
 }
 
+.shader {
+  width: 100%;
+  background: linear-gradient(171deg, #FFFFFF, #FBFBFB, #808080);
+}
+
 .about-content {
   // height: 80vh;
+  width: 80%;
+  margin: 0 auto;
   height: calc(100vh - 60px);
   display: flex;
   justify-content: space-between;
@@ -51,7 +58,6 @@
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.35);
 }
 
 .join-now-btn:hover {
