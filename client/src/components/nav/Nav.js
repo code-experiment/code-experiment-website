@@ -12,6 +12,7 @@ export default withRouter((props) => {
       setIsActive('')
       document.getElementById('HomeHero').scrollIntoView({ behavior: 'smooth', block: "start" })
     } else {
+      setIsActive('')
       props.history.push('/')
     }
   }

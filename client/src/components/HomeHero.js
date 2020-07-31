@@ -1,14 +1,20 @@
 import React from 'react'
 
-import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.jpg'
-
 export default () => {
   return (
-    <div className="homehero shader" id="HomeHero">   
-      <div className="about-content container">
-        <div className="about-main-content">
-          <div className="about-main-content-heading">
-            Web Development meetup for coders who learn by doing.
+    <div className="home-hero-wrapper shader" id="HomeHero">   
+      <div className="home-hero-container">
+        <div className="home-hero-main-content">
+          <div className="home-hero-main-heading">
+            <div>
+              Web Development
+            </div>
+            <div>
+              meetup for coders
+            </div>
+            <div>
+              who learn by doing
+            </div>
           </div>
           <div className="join-now-btn-wrapper">
             <a
@@ -21,7 +27,7 @@ export default () => {
             </a>
           </div>
 
-          <div style={{ width: "100%", color: "#22223B", fontSize: "1.75rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <div className="home-hero-secondary-heading">
             <div>
               EVERY WEDNESDAY
             </div>
@@ -29,9 +35,6 @@ export default () => {
               6PM MST
             </div>
           </div>
-        </div>
-        <div className="tester">
-          <img className="about-secondary-content" src={Image} alt="Laptop of Code" style={{ width: "100%", boxShadow: "10px 10px 20px #22223B80" }} />
         </div>
       </div>
     </div>
