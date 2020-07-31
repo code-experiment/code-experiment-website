@@ -1,7 +1,6 @@
 .about-wrapper {
   min-height: calc(100vh - 80px);
   height: 100%;
-  padding-top: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,4 +93,9 @@
   .about-main-content-heading {
     width: 100%;
   }
+}
+
+
+.homehero {
+  padding-top: 4em;
 }
