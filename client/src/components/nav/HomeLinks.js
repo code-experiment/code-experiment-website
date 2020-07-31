@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom'
 
 export default (props) => {
   const { isActive, setIsActive } = props
-
   const handleNavClick = (event) => {
     setIsActive(event.target.innerHTML)
     let elmnt = document.getElementById(event.target.innerHTML)
-    elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
+    elmnt.scrollIntoView({ behavior: 'smooth', block: "end" })
   }
   return (
     <>
