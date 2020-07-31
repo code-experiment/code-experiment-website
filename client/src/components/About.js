@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.png'
+import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.jpg'
 
 export default () => {
   return (
     <div id="About" className="about-wrapper">
       <div className="shader">   
-        <div className="about-content">
+        <div className="about-content container">
           <div className="about-main-content">
             <div className="about-main-content-heading">
               Web Development meetup for coders who learn by doing.
@@ -31,9 +31,11 @@ export default () => {
               </div>
             </div>
           </div>
-          <div className="about-secondary-content">
-            <img src={Image} alt="Image of Code" style={{ width: "100%" }} />
+          {/* <div className="about-secondary-content"> */}
+          <div className="tester">
+            <img className="about-secondary-content" src={Image} alt="Laptop of Code" style={{ width: "100%", boxShadow: "10px 10px 20px #22223B80" }} />
           </div>
+          {/* </div> */}
         </div>
       </div>
 
@@ -43,7 +45,7 @@ export default () => {
             CODE EXPERIMENT
           </div>
 
-          <div style={{ height: "60%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", color: "#FFFFFF", textAlign: "center", fontSize: "1.25rem" }}>
+          <div style={{ height: "60%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", color: "#FFFFFF", textAlign: "center", fontSize: "1.25rem", lineHeight: "1.6em" }}>
             <div>
               Welcome to Code Experiment. Our goal is to help all those at a beginner and intermediate level get a better grasp of web development by hands on experimentation with other coders. While most meetups have you follow along or try to code on your own after the fact, we believe that having a mentor accessible WHILE you’re coding can make all the difference.
             </div>

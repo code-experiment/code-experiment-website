@@ -23,19 +23,21 @@ export default () => {
     }
   }
   return (
-    <div id="Events" className="upcoming-events">
-      <div className="event-header">
-        <h1>Upcoming Event</h1>
-      </div>
-
-      <div className="event-date-container">
-        <div className="top-date">
-          {nextMeetupDay.toString()} 6:00 PM
+    <div className="shader">
+      <div id="Events" className="upcoming-events">
+        <div className="event-header">
+          <h1>Upcoming Events</h1>
         </div>
 
-        <div className="bottom-date-container">
-          <div className="bottom-date">
-            {handleRenderingNextDate()}
+        <div className="event-date-container">
+          <div className="top-date">
+            {nextMeetupDay.toString()} 6:00 PM
+          </div>
+
+          <div className="bottom-date-container">
+            <div className="bottom-date">
+              {handleRenderingNextDate()}
+            </div>
           </div>
         </div>
       </div>

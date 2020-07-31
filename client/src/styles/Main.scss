@@ -17,11 +17,16 @@
 
 body {
   margin: 0;
-  background-color: whitesmoke;
+  background-color: #FFFFFF;
   font-family: "Roboto", sans-serif;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+.shader {
+  width: 100%;
+  background: linear-gradient(171deg, #FFFFFF, #FBFBFB, #808080);
 }

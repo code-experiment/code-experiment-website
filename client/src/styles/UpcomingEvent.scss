@@ -1,10 +1,12 @@
 .upcoming-events {
-  padding-top: 80px;
+  height: 100%;
+  min-height: calc(100vh - 75px);
 }
 
 .event-header {
   text-align: center;
   width: 100%;
+  color: #22223B;
 }
 
 .event-date-container {

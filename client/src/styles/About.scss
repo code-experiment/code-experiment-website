@@ -2,20 +2,12 @@
   min-height: calc(100vh - 80px);
   height: 100%;
   padding-top: 4em;
-  padding-bottom: 3.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.shader {
-  width: 100%;
-  background: linear-gradient(171deg, #FFFFFF, #FBFBFB, #808080);
-}
-
 .about-content {
-  width: 80%;
-  margin: 0 auto;
   height: calc(100vh - 60px);
   display: flex;
   justify-content: space-between;
@@ -46,6 +38,7 @@
 
 .join-now-btn {
   background-color: #F88E00;
+  box-shadow: 5px 5px 5px #00000029;
   color: white;
   padding: 1em 2em;
   text-decoration: none;
@@ -57,14 +50,16 @@
   background-color: #f88d00bb;
 }
 
-.about-secondary-content {
+.tester {
   width: 40%;
-  line-height: 1.6;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+.about-secondary-content {
+  border: 1px solid #707070;
   border-radius: 10px;
+  opacity: 1;
 }
 
 .about-secondary-content-item {
@@ -74,6 +69,7 @@
 @media only screen and (max-width: 1000px) {
   .about-content {
     flex-direction: column;
+    justify-content: center;
   }
 
   .about-main-content {
@@ -87,6 +83,10 @@
   .about-secondary-content {
     width: 100%;
     margin-top: 4em;
+  }
+
+  .tester {
+    display: none;
   }
 }
 
