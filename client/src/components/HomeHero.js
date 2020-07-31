@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.jpg'
+
 export default () => {
   return (
     <div className="home-hero-wrapper shader" id="HomeHero">   
@@ -35,6 +37,9 @@ export default () => {
               6PM MST
             </div>
           </div>
+        </div>
+        <div className="home-hero-image-wrapper">
+          <img className="about-secondary-content" src={Image} alt="Laptop of Code" style={{ width: "100%", boxShadow: "10px 10px 20px #22223B80" }} />
         </div>
       </div>
     </div>

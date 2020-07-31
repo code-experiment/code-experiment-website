@@ -20,7 +20,7 @@
 }
 
 .home-hero-main-heading {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 500;
   letter-spacing: 1px;
   text-align: center;
@@ -29,7 +29,7 @@
 }
 
 .join-now-btn-wrapper {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .join-now-btn {
@@ -52,9 +52,21 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 900px) {
-  .home-hero-main-heading {
-    font-size: 3rem;
+.home-hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-left: 2em;
+}
+
+.home-hero-image-wrapper img {
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .home-hero-image-wrapper {
+    display: none;
   }
 }
 @media only screen and (max-width: 675px) {
