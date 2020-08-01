@@ -41,6 +41,7 @@
 @media only screen and (max-width: 1000px) {
   .about-container {
     width: 80%;
+    margin: 4em 0;
   }
   
   .about-text-wrapper {
@@ -48,7 +49,7 @@
     margin-top: 2em;
   }
 }
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 840px) {
   .about-header {
     display: none;
   }

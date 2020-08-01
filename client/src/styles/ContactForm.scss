@@ -3,7 +3,6 @@
 }
 
 .contact-form-container {
-  /* padding-top: 2em; */
   min-height: calc(100vh);
   height: 100%;
   display: flex;
@@ -18,8 +17,6 @@
 
 .contact-form {
   padding-top: 2em;
-  /* margin: 0 auto; */
-  // position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -44,10 +41,7 @@
 }
 
 .contact-form-btn {
-  /* Look at without these styles, I think it goes with the flow better especially on mobile screen but feel free to change it back */
-  /* font-size: 2rem; */
   padding: 1em;
-  /* margin-top: 1em; */
   margin-top: 2em;
   margin-bottom: 1em;
   border: none;
@@ -64,9 +58,7 @@
 
 .contact-form-error {
   color: #F88E00;
-  padding: 0.5em 0;
-  
-  // position: absolute;
+  padding: 0.5em 0;  
 }
 
 @media only screen and (min-width: 1000px) {

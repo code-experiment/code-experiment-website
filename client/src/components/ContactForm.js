@@ -66,7 +66,7 @@ export default () => {
             })}
           />
           {errors.name && errors.name.type === "required" && <span className="contact-form-error">This is required</span>}
-          {console.log(errors)}
+
           <textarea
             placeholder='Enter your question here.'
             className='contact-form--input'
