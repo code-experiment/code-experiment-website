@@ -13,7 +13,7 @@ export default (props) => {
     console.log('height', height, 'width', width)
     // TODO:  I can't get the logic to work on this.
     // if (event.target.innerHTML === 'About' && width < 840 && height < 830) {
-    if (event.target.innerHTML === 'About' && height < 830) {
+    if (event.target.innerHTML === 'About' && width < 600 && height < 830) {
       console.log('small')
       elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
     } else {
