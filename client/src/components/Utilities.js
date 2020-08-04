@@ -5,6 +5,7 @@ export default () => {
   return (
     <div className="utilities-wrapper">
       <h1>Utilities Page</h1>
+      <Link to='/utilities/bigwinner'>Big Winner</Link>
       <Link to='/utilities/randomizer'>Randomizer</Link>
       <Link to='/utilities/timer'>Timer</Link>
     </div>
