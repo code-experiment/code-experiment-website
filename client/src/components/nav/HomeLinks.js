@@ -10,9 +10,7 @@ export default (props) => {
   const handleNavClick = (event) => {
     setIsActive(event.target.innerHTML)
     let elmnt = document.getElementById(event.target.innerHTML)
-    console.log('height', height, 'width', width)
-    // TODO:  I can't get the logic to work on this.
-    // if (event.target.innerHTML === 'About' && width < 840 && height < 830) {
+    // TODO:  Fix Scroll Issue, when content goes further than 100vh it needs to scroll to the start.
     if (event.target.innerHTML === 'About' && width < 600 && height < 830) {
       console.log('small')
       elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
