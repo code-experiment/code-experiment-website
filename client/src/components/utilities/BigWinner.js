@@ -41,7 +41,7 @@ export default () => {
         return result
       }, []);
     } else {
-      setModalContentText('You need more than one person to randomize.')
+      setModalContentText("It's not much of a contest with only one possible winner!")
       setModalIsOpen(true)
     }
   }
