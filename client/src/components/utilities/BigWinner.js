@@ -91,7 +91,7 @@ export default () => {
                             className="randomizer-btn"
                             onClick={handleRandomizeClick}
                         >
-                            Randomize
+                            Get Winner
                         </button>
                     </div>
                 </div>
