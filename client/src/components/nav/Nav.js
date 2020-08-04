@@ -5,14 +5,15 @@ import HomeLinks from './HomeLinks'
 import UtilitiesLinks from './UtilitiesLinks';
 
 export default withRouter((props) => {
-  const [isActive, setIsActive] = useState('About')
+  const [isActive, setIsActive] = useState('')
 
   const handleHomeClick = () => {
     if (props.location.pathname === '/') {
-      setIsActive('About')
-      document.getElementById('About').scrollIntoView({ behavior: 'smooth', block: "start" })
+      // TODO - Check Browser Width and Change scrollIntoView Block to Start based on mobile screen
+      setIsActive('')
+      document.getElementById('HomeHero').scrollIntoView({ behavior: 'smooth', block: "start" })
     } else {
-      setIsActive('About')
+      setIsActive('')
       props.history.push('/')
     }
   }

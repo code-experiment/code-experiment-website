@@ -1,6 +1,10 @@
 .contact-form-wrapper {
-  /* padding-top: 2em; */
-  min-height: 100vh;
+  background: #22223B;
+}
+
+.contact-form-container {
+  min-height: calc(100vh);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,11 +12,11 @@
 
 .contact-form-header-text {
   text-align: center;
+  color: #FFFFFF;
 }
 
 .contact-form {
   padding-top: 2em;
-  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
 }
@@ -37,27 +41,30 @@
 }
 
 .contact-form-btn {
-  /* Look at without these styles, I think it goes with the flow better especially on mobile screen but feel free to change it back */
-  /* font-size: 2rem; */
   padding: 1em;
-  /* margin-top: 1em; */
   margin-top: 2em;
   margin-bottom: 1em;
   border: none;
-  background-color: #22223b;
-  color: #f88e00;
+  background-color: #F88E00;
+  color: #FFFFFF;
   border-radius: 0.25em;
   cursor: pointer;
   outline: none;
 }
 
 .contact-form-btn:hover {
-  background-color: #363659;
+  background-color: rgb(221, 125, 0);
+}
+
+.contact-form-error {
+  color: #F88E00;
+  padding: 0.5em 0;  
 }
 
 @media only screen and (min-width: 1000px) {
-  .contact-form-wrapper {
+  .contact-form-container {
     max-width: 60%;
     margin: 0 auto;
   }
 }
+

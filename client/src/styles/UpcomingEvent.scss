@@ -1,45 +1,53 @@
-.upcoming-events {
-  padding-top: 80px;
-}
-
-.event-header {
-  text-align: center;
-  width: 100%;
-}
-
-.event-date-container {
-  height: 30vh;
-  min-height: 200px;
-}
-
-.top-date {
-  width: 100%;
-  height: 20%;
-  text-align: center;
-  background-color: #cc0000;
-  color: white;
-  font-size: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bottom-date-container {
-  height: 80%;
-  background-color: #f8f8ff;
-  border: 1px solid black;
-  border-top: 1px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bottom-date {
-  width: 80%;
+.upcoming-events-wrapper {
   height: 100%;
-  background-color: white;
-  font-size: 30px;
+  min-height: calc(100vh - 75px);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  font-size: 2rem;
+}
+.upcoming-events-header {
+  text-align: center;
+  width: 100%;
+  font-weight: 500;
+  color: #22223B;
+}
+.upcoming-events-header h1 {
+  margin-top: 0;
+}
+.upcoming-events-date-wrapper {
+  max-width: 550px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 20px 20px 20px #00000029;
+  border: 1px solid #707070;
+  border-radius: 10px;
+}
+.date-top {
+  width: 100%;
+  text-align: center;
+  background-color: #CE1515;
+  color: white;
+  padding: 1em;
+}
+.date-bottom-wrapper {
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 4em 0;
+}
+.upcoming-events-container {
+  width: 80%;
+  margin: 0 auto;
+}
+@media only screen and (max-height: 825px) {
+  .date-bottom-wrapper {
+    padding: 2em 0;
+  }
+}
+@media only screen and (max-height: 568px) {
+  .upcoming-events-wrapper {
+    font-size: 1.5rem;
+    // padding: 1em 0;
+  }
 }

@@ -1,86 +1,56 @@
 .about-wrapper {
-  padding-top: 8em;
-  padding-bottom: 3.5em;
-}
-
-.about-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-.about-main-content {
-  width: 30%;
-  background-color: white;
+  min-height: calc(100vh - 80px);
+  height: 100%;
+  background-color: #22223B;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  box-shadow: 10px 10px 10px 1px rgba(0,0,0,0.35);
-  border-radius: 10px;
+  justify-content: center;
 }
 
-.about-main-content-heading {
-  font-size: 2rem;
-  font-weight: 700;
-  padding: 1em;
-  text-align: center;
-}
-
-.join-now-btn-wrapper {
-  margin-top: 1em;
-  margin-bottom: 3em;
-}
-
-.join-now-btn {
-  background-color: #F88E00;
-  color: white;
-  padding: 1em 2em;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.35);
-}
-
-.join-now-btn:hover {
-  background-color: #f88d00bb;
-}
-
-.about-secondary-content {
-  width: 65%;
-  background-color: white;
-  line-height: 1.6;
+.about-container {
+  width: 60%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 10px 10px 10px 1px rgba(0,0,0,0.35);
-  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-secondary-content-item {
-  padding: 1em;
+.about-header {
+  font-size: 3rem;
+  color: #F88E00;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.about-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.6em;
+}
+
+.about-text + .about-text {
+  margin-top: 2.5em;
 }
 
 @media only screen and (max-width: 1000px) {
-  .about-content {
-    flex-direction: column;
-  }
-
-  .about-main-content {
-    width: 100%;
-  }
-
-  .about-main-content-heading {
+  .about-container {
     width: 80%;
+    margin: 4em 0;
   }
-
-  .about-secondary-content {
-    width: 100%;
-    margin-top: 4em;
+  
+  .about-text-wrapper {
+    margin-bottom: 2em;
+    margin-top: 2em;
   }
 }
-
-@media only screen and (max-width: 600px) {
-  .about-main-content-heading {
-    width: 100%;
+@media only screen and (max-width: 840px) {
+  .about-header {
+    display: none;
   }
 }

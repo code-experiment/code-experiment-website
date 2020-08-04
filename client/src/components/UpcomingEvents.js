@@ -1,6 +1,5 @@
 import React from 'react'
 import moment from 'moment'
-
 export default () => {
   const nextMeetup = moment().startOf('week').add(3,'days') // thursday - change number to whatever day of week wanted
   const nextMeetupDay = nextMeetup.format('dddd') // this weeks meetup dat int
@@ -12,7 +11,6 @@ export default () => {
   const nextMeetupDayInt = nextMeetupDateFull.slice(-22, -20) // next weeks meetup day int
   const daysToAdd =  7 - (parseInt(currentTimeDayInt - nextMeetupDayInt)) // how many days from now the upcoming weeks meetup will be
   const upcomingWeeksMeetup = moment().add(daysToAdd, 'days').format('LL') // upcomingweeks meetup
-
   const handleRenderingNextDate = () => {
     if (currentTimeDayInt > nextMeetupDayInt) {
       return upcomingWeeksMeetup.slice(0, -6)
@@ -23,19 +21,20 @@ export default () => {
     }
   }
   return (
-    <div id="Events" className="upcoming-events">
-      <div className="event-header">
-        <h1>Upcoming Event</h1>
-      </div>
-
-      <div className="event-date-container">
-        <div className="top-date">
-          {nextMeetupDay.toString()} 6:00 PM
+    <div className="upcoming-events-wrapper shader" id="Events">
+      <div className="upcoming-events-container">
+        <div className="upcoming-events-header">
+          <h1>Upcoming Events</h1>
         </div>
-
-        <div className="bottom-date-container">
-          <div className="bottom-date">
-            {handleRenderingNextDate()}
+        <div className="upcoming-events-date-wrapper">
+          <div className="date-top">
+            {nextMeetupDay.toString()}
+          </div>
+          <div className="date-bottom-wrapper">
+            <div>
+              {handleRenderingNextDate()}
+            </div>
+            <div style={{ paddingTop: "1rem" }}>6:00 PM</div>
           </div>
         </div>
       </div>
