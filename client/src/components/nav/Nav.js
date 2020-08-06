@@ -32,7 +32,7 @@ export default withRouter((props) => {
     <div className="nav-bar-wrapper">
       <div className="container nav-bar-container">
         <div className="logo-container" onClick={handleHomeClick}>
-          Code Expirement
+          Code Experiment
         </div>
         <div className="links-inner-wrapper">
           {whichLinks()}
