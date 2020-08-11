@@ -1,10 +1,35 @@
 import React, { useRef, useState } from "react";
 
 export default () => {
-    const [fruit1, setFruit1] = useState("");
+    const [fruit, setFruit] = useState("");
     const [rolling, setRolling] = useState(false);
     const defaultProps = {
-        fruits: ["🍒", "🍉", "🍊", "🍓", "🍇", "🥝"],
+        fruits: [
+            "jango boy",
+            "bingo dingo",
+            "Shawn Jones",
+            "Water boy",
+            "Terrance Brown",
+            "Shawty Jean",
+            "Wote Stan",
+            "bango zinga",
+            "jango jingo",
+            "Walker January",
+            "Beto ORoark",
+            "Walter Janice",
+            "Wicked Sister",
+            "Black Sabbath",
+            "Jupiter Planit",
+            "bango wango",
+            "jango tango",
+            "Cherry Jince",
+            "Ware Tiger",
+            "Oranger Bango",
+            "Strawn Neart",
+            "Grant Enterprise",
+            "Kiwi Palmer",
+            "bango zangus",
+        ],
     };
     const slotRef = useRef();
 
@@ -17,8 +42,7 @@ export default () => {
         }, 700);
 
         // this will trigger rolling effect
-        const selected = triggerSlotRotation(slotRef.current);
-        setFruit1(selected);
+        setFruit(triggerSlotRotation(slotRef.current));
     };
 
     // this will create a rolling effect and return random selected option
@@ -30,8 +54,8 @@ export default () => {
         let randomOption = Math.floor(
             Math.random() * defaultProps.fruits.length
         );
-        let choosenOption = options[randomOption];
-        setTop(-choosenOption.offsetTop + 2);
+        let chosenOption = options[randomOption];
+        setTop(-chosenOption.offsetTop + 2);
         return defaultProps.fruits[randomOption];
     };
 
@@ -39,7 +63,7 @@ export default () => {
         <div className="SlotMachine">
             <div className="slot">
                 <section>
-                    <div className="container" ref={slotRef}>
+                    <div className="fruit-container" ref={slotRef}>
                         {defaultProps.fruits.map((fruit, i) => (
                             <div key={i}>
                                 <span>{fruit}</span>
@@ -49,13 +73,13 @@ export default () => {
                 </section>
             </div>
 
-            <div
-                className={!rolling ? "roll rolling" : "roll"}
-                onClick={() => setRolling(!rolling), roll}
+            <button
+                className="roll"
+                onClick={(() => setRolling(!rolling), roll)}
                 disabled={rolling}
             >
-                {rolling ? "Rolling..." : "ROLL"}
-            </div>
+                Pull
+            </button>
         </div>
     );
 };
