@@ -1,13 +1,43 @@
-import React, { useState, useContext } from "react";
+import React, { useRef, useState, useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
 
 export default () => {
     const [name, setName] = useState("");
     const [names, setNames] = useState([]);
     const [results, setResults] = useState([]);
+    const [fruit, setFruit] = useState("");
+    const [rolling, setRolling] = useState(false);
+
     const { setModalContentText, setModalIsOpen } = useContext(
         ModalContext
     );
+    const slotRef = useRef();
+
+    // to trigger roolling and maintain state
+    const roll = () => {
+        setRolling(true);
+
+        setTimeout(() => {
+            setRolling(false);
+        }, 700);
+
+        // this will trigger rolling effect
+        setFruit(triggerSlotRotation(slotRef.current));
+    };
+
+    // this will create a rolling effect and return random selected option
+    const triggerSlotRotation = (ref) => {
+        function setTop(top) {
+            ref.style.top = `${top}px`;
+        }
+        let options = ref.children;
+        let randomOption = Math.floor(
+            Math.random() * names.length
+        );
+        let chosenOption = options[randomOption];
+        setTop(-chosenOption.offsetTop + 2);
+        return names[randomOption];
+    };
 
     const handleAddClick = (e) => {
         e.preventDefault();
@@ -22,20 +52,6 @@ export default () => {
             setName("");
         } else {
             setModalContentText("You need to have a name to add.");
-            setModalIsOpen(true);
-        }
-    };
-
-    const handleRandomizeClick = () => {
-        if (names.length > 1) {
-            console.log(Math.floor(Math.random() * names.length))
-            let winner = names[Math.floor(Math.random() * names.length)];
-            setResults(winner)
-            
-        } else {
-            setModalContentText(
-                "It's not much of a contest if you don't even have 2 names!"
-            );
             setModalIsOpen(true);
         }
     };
@@ -84,29 +100,32 @@ export default () => {
                             Add
                         </button>
                     </div>
-
-                    <div className="randomizer-btn-wrapper">
-                        <button
-                            type="button"
-                            className="randomizer-btn"
-                            onClick={handleRandomizeClick}
-                        >
-                            Get Winner
-                        </button>
-                    </div>
                 </div>
             </form>
 
-            <div className="randomizer-results-container">
-                <div>
-                    <h1 className="randomizer-results-heading">
-                        Results
-                    </h1>
-
-                    <div className="randomizer-results-wrapper">
-                        {results}
-                    </div>
+            <div className="SlotMachine">
+                <div className="slot">
+                    <section>
+                        <div
+                            className="fruit-container"
+                            ref={slotRef}
+                        >
+                            {names.map((name, i) => (
+                                <div key={i}>
+                                    <span>{name}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
                 </div>
+
+                <button
+                    className="roll"
+                    onClick={(() => setRolling(!rolling), roll)}
+                    disabled={rolling}
+                >
+                    Pull
+                </button>
             </div>
         </div>
     );
