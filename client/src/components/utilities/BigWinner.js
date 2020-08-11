@@ -4,8 +4,6 @@ import ModalContext from "../../contexts/ModalContext";
 export default () => {
     const [name, setName] = useState("");
     const [names, setNames] = useState([]);
-    const [results, setResults] = useState([]);
-    const [fruit, setFruit] = useState("");
     const [rolling, setRolling] = useState(false);
 
     const { setModalContentText, setModalIsOpen } = useContext(
@@ -22,7 +20,7 @@ export default () => {
         }, 700);
 
         // this will trigger rolling effect
-        setFruit(triggerSlotRotation(slotRef.current));
+        triggerSlotRotation(slotRef.current);
     };
 
     // this will create a rolling effect and return random selected option
@@ -31,9 +29,7 @@ export default () => {
             ref.style.top = `${top}px`;
         }
         let options = ref.children;
-        let randomOption = Math.floor(
-            Math.random() * names.length
-        );
+        let randomOption = Math.floor(Math.random() * names.length);
         let chosenOption = options[randomOption];
         setTop(-chosenOption.offsetTop + 2);
         return names[randomOption];
@@ -122,7 +118,7 @@ export default () => {
                 <button
                     className="roll"
                     onClick={(() => setRolling(!rolling), roll)}
-                    disabled={rolling}
+                    disabled={rolling || names.length === 0}
                 >
                     Pull
                 </button>
