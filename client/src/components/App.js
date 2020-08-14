@@ -8,7 +8,6 @@ import Utilities from "./Utilities";
 import BigWinner from "./utilities/BigWinner";
 import Randomizer from './utilities/Randomizer';
 import Timer from './utilities/Timer';
-import Slots from './utilities/Slots';
 
 import '../styles/Main.scss';
 import ModalProvider from "../providers/ModalProvider";

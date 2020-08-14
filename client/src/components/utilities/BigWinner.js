@@ -29,9 +29,10 @@ export default () => {
             ref.style.top = `${top}px`;
         }
         let options = ref.children;
+
         let randomOption = Math.floor(Math.random() * names.length);
         let chosenOption = options[randomOption];
-        setTop(-chosenOption.offsetTop + 2);
+        setTop(-chosenOption.offsetTop + 15);
         return names[randomOption];
     };
 
