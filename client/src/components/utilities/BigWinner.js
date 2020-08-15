@@ -5,6 +5,8 @@ export default () => {
     const [name, setName] = useState("");
     const [names, setNames] = useState([]);
     const [rolling, setRolling] = useState(false);
+    const [chosenOption, setChosenOption] = useState(0)
+    const [rollSpeed, setRollSpeed] = useState(1);
 
     const { setModalContentText, setModalIsOpen } = useContext(
         ModalContext
@@ -31,7 +33,8 @@ export default () => {
         let options = ref.children;
 
         let randomOption = Math.floor(Math.random() * names.length);
-        let chosenOption = options[randomOption];
+        setRollSpeed(Math.abs(chosenOption - randomOption) * .25)
+        setChosenOption(options[randomOption])
         setTop(-chosenOption.offsetTop + 15);
         return names[randomOption];
     };
@@ -106,6 +109,7 @@ export default () => {
                         <div
                             className="fruit-container"
                             ref={slotRef}
+                            style={{transition:`top ease ${rollSpeed}s`}}
                         >
                             {names.map((name, i) => (
                                 <div key={i}>
