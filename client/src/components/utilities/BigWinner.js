@@ -16,28 +16,29 @@ export default () => {
     // to trigger roolling and maintain state
     const rollClick = () => {
         setRolling(true);
-
+        
         setTimeout(() => {
             setRolling(false);
         }, 700);
-
+        
         let counter = 0;
         let rollInterval = setInterval(function () {
-            if (counter <= names.length) {
+            debugger;
+            if (counter < names.length) {
                 setWinner(names[counter]);
                 counter++;
             } else {
                 clearInterval(rollInterval);
                 counter = 0;
             }
-        }, 80);
-        chooseWinner();
+            chooseWinner();
+        }, 100);
     };
 
     const chooseWinner = () => {
         const randomNumber = Math.floor(Math.random() * names.length);
-        console.log(names[randomNumber])
         setWinner(names[randomNumber]);
+        console.log(names[randomNumber])
     };
 
     const handleAddClick = (e) => {
