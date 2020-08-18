@@ -7,19 +7,37 @@ export default () => {
     const [name, setName] = useState("");
     const [names, setNames] = useState([]);
     const [rolling, setRolling] = useState(false);
-    const [winner, setWinner] = useState('');
+    const [winner, setWinner] = useState("");
 
     const { setModalContentText, setModalIsOpen } = useContext(
         ModalContext
     );
 
     // to trigger roolling and maintain state
-    const roll = () => {
+    const rollClick = () => {
         setRolling(true);
 
         setTimeout(() => {
             setRolling(false);
         }, 700);
+
+        let counter = 0;
+        let rollInterval = setInterval(function () {
+            if (counter <= names.length) {
+                setWinner(names[counter]);
+                counter++;
+            } else {
+                clearInterval(rollInterval);
+                counter = 0;
+            }
+        }, 80);
+        chooseWinner();
+    };
+
+    const chooseWinner = () => {
+        const randomNumber = Math.floor(Math.random() * names.length);
+        console.log(names[randomNumber])
+        setWinner(names[randomNumber]);
     };
 
     const handleAddClick = (e) => {
@@ -89,17 +107,15 @@ export default () => {
             <div className="SlotMachine">
                 <div className="slot">
                     <section>
-                        <div
-                            className="fruit-container"
-                        >
-                        {winner}
+                        <div className="fruit-container">
+                            {winner}
                         </div>
                     </section>
                 </div>
 
                 <button
                     className="roll"
-                    onClick={(() => setRolling(!rolling), roll)}
+                    onClick={(() => setRolling(!rolling), rollClick)}
                     disabled={rolling || names.length === 0}
                 >
                     Pull
