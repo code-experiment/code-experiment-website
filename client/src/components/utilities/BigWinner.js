@@ -7,6 +7,7 @@ export default () => {
     const [name, setName] = useState("");
     const [names, setNames] = useState([]);
     const [rolling, setRolling] = useState(false);
+    const [winner, setWinner] = useState('');
 
     const { setModalContentText, setModalIsOpen } = useContext(
         ModalContext
@@ -91,7 +92,7 @@ export default () => {
                         <div
                             className="fruit-container"
                         >
-                        
+                        {winner}
                         </div>
                     </section>
                 </div>
