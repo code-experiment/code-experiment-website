@@ -1,17 +1,16 @@
-import React, { useRef, useState, useContext } from "react";
+// refactor the dice simulator?
+
+import React, { useState, useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
 
 export default () => {
     const [name, setName] = useState("");
     const [names, setNames] = useState([]);
     const [rolling, setRolling] = useState(false);
-    const [chosenOption, setChosenOption] = useState(0)
-    const [rollSpeed, setRollSpeed] = useState(1);
 
     const { setModalContentText, setModalIsOpen } = useContext(
         ModalContext
     );
-    const slotRef = useRef();
 
     // to trigger roolling and maintain state
     const roll = () => {
@@ -20,23 +19,6 @@ export default () => {
         setTimeout(() => {
             setRolling(false);
         }, 700);
-
-        // this will trigger rolling effect
-        triggerSlotRotation(slotRef.current);
-    };
-
-    // this will create a rolling effect and return random selected option
-    const triggerSlotRotation = (ref) => {
-        function setTop(top) {
-            ref.style.top = `${top}px`;
-        }
-        let options = ref.children;
-
-        let randomOption = Math.floor(Math.random() * names.length);
-        setRollSpeed(Math.abs(chosenOption - randomOption) * .25)
-        setChosenOption(options[randomOption])
-        setTop(-chosenOption.offsetTop + 15);
-        return names[randomOption];
     };
 
     const handleAddClick = (e) => {
@@ -108,14 +90,8 @@ export default () => {
                     <section>
                         <div
                             className="fruit-container"
-                            ref={slotRef}
-                            style={{transition:`top ease ${rollSpeed}s`}}
                         >
-                            {names.map((name, i) => (
-                                <div key={i}>
-                                    <span>{name}</span>
-                                </div>
-                            ))}
+                        
                         </div>
                     </section>
                 </div>
