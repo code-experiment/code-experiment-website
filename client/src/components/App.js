@@ -5,6 +5,7 @@ import Nav from "./nav/Nav";
 import Home from "./Home";
 import NoMatch from "./NoMatch";
 import Utilities from "./Utilities";
+import BigWinner from "./utilities/BigWinner";
 import Randomizer from './utilities/Randomizer';
 import Timer from './utilities/Timer';
 
@@ -21,8 +22,10 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/utilities' component={Utilities} />
-        <Route exact path='/utilities/timer' component={Timer} />
+        <Route exact path='/utilities/bigwinner' component={BigWinner} />
         <Route exact path='/utilities/randomizer' component={Randomizer} />
+        <Route exact path='/utilities/timer' component={Timer} />
+        
         <Route component={NoMatch} />
       </Switch>
     </Router>

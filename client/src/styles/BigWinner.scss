@@ -1,0 +1,41 @@
+.SlotMachine {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .slot {
+        position: relative;
+        display: inline-block;
+        height: 100px;
+        width: 215px;
+
+        section {
+            position: absolute;
+            width: 215px;
+            height: 80px;
+            overflow: hidden;
+            text-align: center;
+            font-size: 25px;
+            line-height: 40px;
+            cursor: default;
+
+            .fruit-container {
+                position: absolute;
+                top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .roll {
+        cursor: pointer;
+        background-color: rgb(106, 255, 77);
+        padding: 10px;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+}
