@@ -1,23 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import useWindowDimensions from '../../helpers/useWindowDimensions';
-
 export default (props) => {
-  const { height, width } = useWindowDimensions();
   const { isActive, setIsActive } = props
 
   const handleNavClick = (event) => {
     setIsActive(event.target.innerHTML)
-    let elmnt = document.getElementById(event.target.innerHTML)
-    // TODO:  Fix Scroll Issue, when content goes further than 100vh it needs to scroll to the start.
-    // if (event.target.innerHTML === 'About' && width < 840 && height < 830) {
-    if (event.target.innerHTML === 'About' && width < 600 && height < 830) {
-      console.log('small')
-      elmnt.scrollIntoView({ behavior: 'smooth', block: "start" })
-    } else {
-      elmnt.scrollIntoView({ behavior: 'smooth', block: "end" })
-    }
+
+    var elementPosition = document.getElementById(event.target.innerHTML).offsetTop;
+
+    // This works in Safari but doesn't do the smooth scroll
+    window.scrollTo({
+      top: elementPosition - 80, //add your necessary value
+      behavior: "smooth"  //Smooth transition to roll
+    });
   }
 
   return (

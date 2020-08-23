@@ -8,12 +8,10 @@ import HomeHero from "./HomeHero";
 function Home() {
   return (
     <div className='App'>
-      {/* <div className='container'> */}
-        <HomeHero />
-        <About />
-        <UpcomingEvents />
-        <ContactForm />
-      {/* </div> */}
+      <HomeHero />
+      <About />
+      <UpcomingEvents />
+      <ContactForm />
     </div>
   );
 }

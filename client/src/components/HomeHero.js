@@ -21,7 +21,7 @@ export default () => {
           <div className="join-now-btn-wrapper">
             <a
               className="join-now-btn"
-              href="https://join.slack.com/t/codeassistworkspace/shared_invite/zt-frl94kyr-v7QepaQJKDG1NRh0vPdRhQ"
+              href="https://join.slack.com/t/code-experiment/shared_invite/zt-founos13-TUgJVFsUW04zQEsDh2fIlA"
               target="_blank"
               rel="noopener noreferrer"
             >
