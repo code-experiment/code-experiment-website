@@ -38,7 +38,6 @@ export default () => {
     const chooseWinner = () => {
         const randomNumber = Math.floor(Math.random() * names.length);
         setWinner(names[randomNumber]);
-        console.log(names[randomNumber])
     };
 
     const handleAddClick = (e) => {
