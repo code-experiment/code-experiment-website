@@ -1,5 +1,5 @@
 .SlotMachine {
-    padding: 100px;
+    margin-top: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@
 
             .fruit-container {
                 position: absolute;
-                top: 15px;
+                top: 30px;
                 width: 100%;
                 text-align: center;
             }
