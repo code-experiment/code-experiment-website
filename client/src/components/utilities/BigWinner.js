@@ -23,7 +23,6 @@ export default () => {
         
         let counter = 0;
         let rollInterval = setInterval(function () {
-            debugger;
             if (counter < names.length) {
                 setWinner(names[counter]);
                 counter++;

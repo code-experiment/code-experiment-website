@@ -8,7 +8,7 @@ export default () => {
         <NavLink exact to="/utilities" className="link">Utilities</NavLink>
       </div>
       <div className="link-wrapper">
-        <NavLink to="/utilities/bigwinner" className="link">Big Winner</NavLink>
+        <NavLink to="/utilities/bigwinner" className="link">Winner</NavLink>
       </div>
       <div className="link-wrapper">
         <NavLink to="/utilities/randomizer" className="link">Randomizer</NavLink>
