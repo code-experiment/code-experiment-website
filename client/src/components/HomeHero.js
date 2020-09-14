@@ -31,7 +31,7 @@ export default () => {
 
           <div className="home-hero-secondary-heading">
             <div>
-              EVERY WEDNESDAY
+              EVERY TUESDAY
             </div>
             <div>
               6PM MST
