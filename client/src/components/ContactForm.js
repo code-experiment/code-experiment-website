@@ -24,7 +24,6 @@ export default () => {
         text: data.question,
       })
       .then((res) => {
-        console.log(res)
         if(res.data.status === "success") {
           e.target.reset();
           setModalHeadingText("Success!")
