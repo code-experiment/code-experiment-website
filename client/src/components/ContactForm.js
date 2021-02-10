@@ -23,12 +23,20 @@ export default () => {
         email: data.email,
         text: data.question,
       })
-      .then(() => {
-        e.target.reset();
-        setModalHeadingText("Success!")
-        setModalContentText("You have successfully submitted the form.")
-        setModalIsOpen(true)
-        setIsSubmitting(false);
+      .then((res) => {
+        console.log(res)
+        if(res.data.status === "success") {
+          e.target.reset();
+          setModalHeadingText("Success!")
+          setModalContentText("You have successfully submitted the form.")
+          setModalIsOpen(true)
+          setIsSubmitting(false);
+        } else {
+          setModalHeadingText("UNSUCCESSFUL!")
+          setModalContentText("It seems like our mail server is down.  Please try again later")
+          setModalIsOpen(true)
+          setIsSubmitting(false);
+        }
       })
       .catch(() => {
         setModalHeadingText("Error")
