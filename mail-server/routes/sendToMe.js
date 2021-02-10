@@ -2,16 +2,20 @@ const express = require('express')
 const sendToMeRouter = express.Router()
 const nodemailer = require('nodemailer')
 
-const transport = {
-  //all of the configuration for making a site send an email.
+let transport = {
   host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
+  port: 465,
+  secure: true,
   auth: {
+    type: 'OAuth2',
     user: process.env.THE_EMAIL,
-    pass: process.env.THE_PASSWORD
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    refreshToken: process.env.REFRESH_TOKEN,
+    accessToken: process.env.ACCESS_TOKEN,
+    expires: 3599
   }
-};
+}
 
 const transporter = nodemailer.createTransport(transport);
   transporter.verify((error, success) => {
