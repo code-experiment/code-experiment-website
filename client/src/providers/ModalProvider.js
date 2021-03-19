@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import ModalContext from '../contexts/ModalContext'
+import React, { useState } from "react";
+import ModalContext from "../contexts/ModalContext";
 
-export default (props) => {
-  const [ modalIsOpen, setModalIsOpen ] = useState(false)
-  const [ modalHeadingText, setModalHeadingText ] = useState(false)
-  const [ modalContentText, setModalContentText ] = useState(false)
+const ModalProviders = (props) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalHeadingText, setModalHeadingText] = useState(false);
+  const [modalContentText, setModalContentText] = useState(false);
 
   const state = {
     modalIsOpen,
@@ -12,12 +12,14 @@ export default (props) => {
     modalHeadingText,
     setModalHeadingText,
     modalContentText,
-    setModalContentText
-  }
-  
+    setModalContentText,
+  };
+
   return (
     <ModalContext.Provider value={state}>
       {props.children}
     </ModalContext.Provider>
-  )
-}
+  );
+};
+
+export default ModalProviders;
