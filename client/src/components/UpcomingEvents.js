@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-export default () => {
+const UpcomingEvents = () => {
   const nextMeetup = moment().startOf('week').add(2,'days') // thursday - change number to whatever day of week wanted
   const nextMeetupDay = nextMeetup.format('dddd') // this weeks meetup dat int
   const nextMeetupDate = nextMeetup.format('LL').slice(0, -6) // this weeks meetup formatted for day and year
@@ -41,3 +41,5 @@ export default () => {
     </div>
   )
 }
+
+export default UpcomingEvents;

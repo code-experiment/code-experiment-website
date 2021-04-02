@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import tbot from "../assets/images/tbot.png";
 
-export default () => {
+const NoMatch = () => {
   return (
     <div className='error-wrapper'>
       <div className='error-heading'>
@@ -19,3 +19,5 @@ export default () => {
     </div>
   );
 };
+
+export default NoMatch;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import ModalContext from '../contexts/ModalContext'
 
 
-export default () => {
+const Modal = () => {
   const {
     modalIsOpen,
     setModalIsOpen,
@@ -43,3 +43,5 @@ export default () => {
     </div>
   )
 }
+
+export default Modal;

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.jpg'
 
-export default () => {
+const HomeHero = () => {
   return (
     <div className="home-hero-wrapper shader" id="HomeHero">   
       <div className="home-hero-container">
@@ -45,3 +45,5 @@ export default () => {
     </div>
   )
 }
+
+export default HomeHero;

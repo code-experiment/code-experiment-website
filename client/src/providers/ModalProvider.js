@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ModalContext from '../contexts/ModalContext'
 
-export default (props) => {
+const ModalProvider = (props) => {
   const [ modalIsOpen, setModalIsOpen ] = useState(false)
   const [ modalHeadingText, setModalHeadingText ] = useState(false)
   const [ modalContentText, setModalContentText ] = useState(false)
@@ -21,3 +21,5 @@ export default (props) => {
     </ModalContext.Provider>
   )
 }
+
+export default ModalProvider;

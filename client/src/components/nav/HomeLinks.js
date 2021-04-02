@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-export default (props) => {
+const HomeLinks = (props) => {
   const { isActive, setIsActive } = props
 
   const handleNavClick = (event) => {
@@ -56,3 +56,5 @@ export default (props) => {
     </>
   )
 }
+
+export default HomeLinks;

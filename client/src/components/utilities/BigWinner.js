@@ -3,7 +3,7 @@
 import React, { useState, useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
 
-export default () => {
+const BigWinner = () => {
     const [name, setName] = useState("");
     const [names, setNames] = useState([]);
     const [rolling, setRolling] = useState(false);
@@ -123,3 +123,5 @@ export default () => {
         </div>
     );
 };
+
+export default BigWinner;

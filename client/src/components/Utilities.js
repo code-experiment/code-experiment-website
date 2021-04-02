@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default () => {
+const Utilities = () => {
   return (
     <div className="utilities-wrapper shader">
       <h1>Utilities</h1>
@@ -13,3 +13,5 @@ export default () => {
     </div>
   );
 };
+
+export default Utilities;

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import api from "../helpers/api";
 import ModalContext from "../contexts/ModalContext";
 
-export default () => {
+const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const {
@@ -96,3 +96,5 @@ export default () => {
     </div>
   );
 };
+
+export default ContactForm;

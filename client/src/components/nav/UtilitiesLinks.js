@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default () => {
+const UtilitiesLinks = () => {
   return (
     <>
       <div className="link-wrapper">
@@ -19,3 +19,5 @@ export default () => {
     </>
   )
 }
+
+export default UtilitiesLinks;

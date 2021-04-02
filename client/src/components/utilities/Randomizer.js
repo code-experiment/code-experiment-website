@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import ModalContext from '../../contexts/ModalContext'
 
-export default () => {
+const Randomizer = () => {
   const [ name, setName ] = useState("")
   const [ names, setNames ] = useState([])
   const [ results, setResults ] = useState([])
@@ -130,3 +130,5 @@ export default () => {
     </div>
   )
 }
+
+export default Randomizer;
