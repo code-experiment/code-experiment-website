@@ -1,36 +1,39 @@
-import React, { useContext } from "react";
-import ModalContext from "../contexts/ModalContext";
+import React, { useContext } from 'react'
+import ModalContext from '../contexts/ModalContext'
 
-const Modal = () => {
+
+export default () => {
   const {
     modalIsOpen,
     setModalIsOpen,
     modalHeadingText,
     setModalHeadingText,
     modalContentText,
-    setModalContentText,
-  } = useContext(ModalContext);
-
+    setModalContentText
+  } = useContext(ModalContext)
+  
   const handleClick = (e) => {
     e.preventDefault();
-    setModalHeadingText(false);
-    setModalContentText("");
-    setModalIsOpen(false);
-  };
-
+    setModalHeadingText(false)
+    setModalContentText("")
+    setModalIsOpen(false)
+  }
+  
   if (!modalIsOpen) {
-    return null;
+    return null
   }
 
   return (
     <div className="modal-container">
       <div className="modal-content-wrapper">
         <div className="modal-heading-text">
-          {modalHeadingText ? modalHeadingText : "Alert"}
+          { modalHeadingText ? modalHeadingText : "Alert" }
         </div>
 
         <div className="modal-main-content-wrapper">
-          <div className="modal-main-content">{modalContentText}</div>
+          <div className="modal-main-content">
+              { modalContentText }
+          </div>
 
           <button className="modal-main-content-btn" onClick={handleClick}>
             OK
@@ -38,7 +41,5 @@ const Modal = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export default Modal;
+  )
+}

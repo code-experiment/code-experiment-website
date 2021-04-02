@@ -4,14 +4,14 @@ import { useForm } from "react-hook-form";
 import api from "../helpers/api";
 import ModalContext from "../contexts/ModalContext";
 
-const ContactForm = () => {
+export default () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const {
     setModalIsOpen,
     setModalHeadingText,
-    setModalContentText,
-  } = useContext(ModalContext);
+    setModalContentText
+  } = useContext(ModalContext)
 
   const onSubmit = (data, e) => {
     setIsSubmitting(true);
@@ -24,50 +24,46 @@ const ContactForm = () => {
         text: data.question,
       })
       .then((res) => {
-        if (res.data.status === "success") {
+        if(res.data.status === "success") {
           e.target.reset();
-          setModalHeadingText("Success!");
-          setModalContentText("You have successfully submitted the form.");
-          setModalIsOpen(true);
+          setModalHeadingText("Success!")
+          setModalContentText("You have successfully submitted the form.")
+          setModalIsOpen(true)
           setIsSubmitting(false);
         } else {
-          setModalHeadingText("UNSUCCESSFUL!");
-          setModalContentText(
-            "It seems like our mail server is down.  Please try again later"
-          );
-          setModalIsOpen(true);
+          setModalHeadingText("UNSUCCESSFUL!")
+          setModalContentText("It seems like our mail server is down.  Please try again later")
+          setModalIsOpen(true)
           setIsSubmitting(false);
         }
       })
       .catch(() => {
-        setModalHeadingText("Error");
-        setModalContentText("Server possibly down");
-        setModalIsOpen(true);
+        setModalHeadingText("Error")
+        setModalContentText("Server possibly down")
+        setModalIsOpen(true)
         setIsSubmitting(false);
       });
   };
 
   return (
     <div className="contact-form-wrapper">
-      <div className="contact-form-container container" id="Contact">
-        <h1 className="contact-form-header-text">Contact Us</h1>
-        <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+      <div className='contact-form-container container' id='Contact'>
+        <h1 className='contact-form-header-text'>Contact Us</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className='contact-form'>
           <input
-            className="contact-form--input"
-            type="text"
-            placeholder="Name"
-            name="name"
+            className='contact-form--input'
+            type='text'
+            placeholder='Name'
+            name='name'
             ref={register({ required: "Required" })}
           />
-          {errors.name && errors.name.type === "required" && (
-            <span className="contact-form-error">This is required</span>
-          )}
+          {errors.name && errors.name.type === "required" && <span className="contact-form-error">This is required</span>}
 
           <input
-            className="contact-form--input"
-            type="email"
-            name="email"
-            placeholder="Email"
+            className='contact-form--input'
+            type='email'
+            name='email'
+            placeholder='Email'
             ref={register({
               required: "Required",
               pattern: {
@@ -76,26 +72,22 @@ const ContactForm = () => {
               },
             })}
           />
-          {errors.name && errors.name.type === "required" && (
-            <span className="contact-form-error">This is required</span>
-          )}
+          {errors.name && errors.name.type === "required" && <span className="contact-form-error">This is required</span>}
 
           <textarea
-            placeholder="Enter your question here."
-            className="contact-form--input"
-            name="question"
+            placeholder='Enter your question here.'
+            className='contact-form--input'
+            name='question'
             ref={register({ required: "Required" })}
           />
-          {errors.name && errors.name.type === "required" && (
-            <span className="contact-form-error">This is required</span>
-          )}
+          {errors.name && errors.name.type === "required" && <span className="contact-form-error">This is required</span>}
 
           {isSubmitting ? (
-            <button disabled className="contact-form-btn">
+            <button disabled className='contact-form-btn'>
               Submitting...
             </button>
           ) : (
-            <button type="submit" className="contact-form-btn">
+            <button type='submit' className='contact-form-btn'>
               Submit
             </button>
           )}
@@ -104,5 +96,3 @@ const ContactForm = () => {
     </div>
   );
 };
-
-export default ContactForm;
