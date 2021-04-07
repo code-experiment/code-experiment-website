@@ -5,15 +5,15 @@ import UpcomingEvents from "./UpcomingEvents";
 import ContactForm from "./ContactForm";
 import HomeHero from "./HomeHero";
 
-function Home() {
+const Home = () => {
   return (
-    <div className='App'>
+    <div className="App">
       <HomeHero />
       <About />
       <UpcomingEvents />
       <ContactForm />
     </div>
   );
-}
+};
 
 export default Home;

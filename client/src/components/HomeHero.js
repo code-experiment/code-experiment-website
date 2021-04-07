@@ -1,22 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import Image from '../assets/images/chris-ried-ieic5Tq8YMk-unsplash.jpg'
+import Image from "../assets/images/chris-ried-ieic5Tq8YMk-unsplash.jpg";
 
 const HomeHero = () => {
   return (
-    <div className="home-hero-wrapper shader" id="HomeHero">   
+    <div className="home-hero-wrapper shader" id="HomeHero">
       <div className="home-hero-container">
         <div className="home-hero-main-content">
           <div className="home-hero-main-heading">
-            <div>
-              Web Development
-            </div>
-            <div>
-              meetup for coders
-            </div>
-            <div>
-              who learn by doing
-            </div>
+            <div>Web Development</div>
+            <div>meetup for coders</div>
+            <div>who learn by doing</div>
           </div>
           <div className="join-now-btn-wrapper">
             <a
@@ -30,20 +24,21 @@ const HomeHero = () => {
           </div>
 
           <div className="home-hero-secondary-heading">
-            <div>
-              EVERY TUESDAY
-            </div>
-            <div>
-              6PM MST
-            </div>
+            <div>EVERY TUESDAY</div>
+            <div>6PM MST</div>
           </div>
         </div>
         <div className="home-hero-image-wrapper">
-          <img className="about-secondary-content" src={Image} alt="Laptop of Code" style={{ width: "100%", boxShadow: "10px 10px 20px #22223B80" }} />
+          <img
+            className="about-secondary-content"
+            src={Image}
+            alt="Laptop of Code"
+            style={{ width: "100%", boxShadow: "10px 10px 20px #22223B80" }}
+          />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default HomeHero;

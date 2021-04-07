@@ -1,5 +1,5 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
-const ModalContext = createContext()
+const ModalContext = createContext();
 
-export default ModalContext
+export default ModalContext;
