@@ -6,14 +6,14 @@ import ContactForm from "./ContactForm";
 import HomeHero from "./HomeHero";
 
 const Home = () => {
-  return (
-    <div className="App">
-      <HomeHero />
-      <About />
-      <UpcomingEvents />
-      <ContactForm />
-    </div>
-  );
+    return (
+        <div className="App">
+            <HomeHero />
+            <About />
+            <UpcomingEvents />
+            <ContactForm />
+        </div>
+    );
 };
 
 export default Home;

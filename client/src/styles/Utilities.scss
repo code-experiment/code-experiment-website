@@ -1,30 +1,30 @@
 .utilities-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-  h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-  }
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
 }
 
 .utilities-links-wrapper {
-  display: grid;
-  gap: 1em;
-  
-  .utilities-link {
-    background-color: #22223B;
-    color: #F88E00;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 1em 1.5em;
-    
-    &:hover {
-      background-color: #404060;
+    display: grid;
+    gap: 1em;
+
+    .utilities-link {
+        background-color: #22223b;
+        color: #f88e00;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1em 1.5em;
+
+        &:hover {
+            background-color: #404060;
+        }
     }
-  }
 }
