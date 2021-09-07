@@ -11,7 +11,7 @@
         "type": "git",
         "url": "git+https://github.com/code-experiment/code-experiment-website.git"
     },
-    "author": "",
+    "author": "Daniel Floyd <gleek.dan@gmail.com> (https://github.com/gleekzorp)",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/code-experiment/code-experiment-website/issues"
