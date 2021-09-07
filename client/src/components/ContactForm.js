@@ -52,6 +52,9 @@ const ContactForm = () => {
       <div className="contact-form-container container" id="Contact">
         <h1 className="contact-form-header-text">Contact Us</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+
+        <label className="contact-form contact-form-header-text">
+          Name: 
           <input
             className="contact-form--input"
             type="text"
@@ -59,33 +62,41 @@ const ContactForm = () => {
             name="name"
             ref={register({ required: "Required" })}
           />
+          </label>
           {errors.name && errors.name.type === "required" && (
             <span className="contact-form-error">This is required</span>
           )}
 
-          <input
-            className="contact-form--input"
-            type="email"
-            name="email"
-            placeholder="Email"
-            ref={register({
-              required: "Required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "invalid email address",
-              },
-            })}
-          />
+          <label className="contact-form contact-form-header-text">
+            Email: 
+            <input
+              className="contact-form--input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              ref={register({
+                required: "Required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "invalid email address",
+                },
+              })}
+            />
+          </label>
           {errors.name && errors.name.type === "required" && (
             <span className="contact-form-error">This is required</span>
-          )}
+            )}
 
-          <textarea
-            placeholder="Enter your question here."
-            className="contact-form--input"
-            name="question"
-            ref={register({ required: "Required" })}
-          />
+          <label className="contact-form contact-form-header-text">
+            Question:
+            <textarea
+              placeholder="Enter your question here."
+              className="contact-form--input"
+              name="question"
+              ref={register({ required: "Required" })}
+            />
+          </label>
+
           {errors.name && errors.name.type === "required" && (
             <span className="contact-form-error">This is required</span>
           )}
