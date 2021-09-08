@@ -55,6 +55,7 @@ const ContactForm = () => {
           <label htmlFor="namedInput" className="contact-form-label"> Name: </label>
           <input
             className="contact-form--input"
+            id="namedInput"
             type="text"
             placeholder="Name"
             name="name"
@@ -67,6 +68,7 @@ const ContactForm = () => {
           <label htmlFor="emailInput" className="contact-form-label"> Email: </label>
           <input
             className="contact-form--input"
+            id="emailInput"
             type="email"
             name="email"
             placeholder="Email"
@@ -85,6 +87,7 @@ const ContactForm = () => {
           <label htmlFor="questionInput" className="contact-form-label"> Question: </label>
           <textarea
             placeholder="Enter your question here."
+            id="questionInput"
             className="contact-form--input"
             name="question"
             ref={register({ required: "Required" })}
