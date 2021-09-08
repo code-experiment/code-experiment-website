@@ -52,6 +52,7 @@ const ContactForm = () => {
       <div className="contact-form-container container" id="Contact">
         <h1 className="contact-form-header-text">Contact Us</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+          <label htmlFor="namedInput" className="contact-form-label"> Name: </label>
           <input
             className="contact-form--input"
             type="text"
@@ -63,6 +64,7 @@ const ContactForm = () => {
             <span className="contact-form-error">This is required</span>
           )}
 
+          <label htmlFor="emailInput" className="contact-form-label"> Email: </label>
           <input
             className="contact-form--input"
             type="email"
@@ -79,7 +81,8 @@ const ContactForm = () => {
           {errors.name && errors.name.type === "required" && (
             <span className="contact-form-error">This is required</span>
           )}
-
+          
+          <label htmlFor="questionInput" className="contact-form-label"> Question: </label>
           <textarea
             placeholder="Enter your question here."
             className="contact-form--input"
