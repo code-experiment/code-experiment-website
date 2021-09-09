@@ -6,7 +6,11 @@ import ModalContext from "../contexts/ModalContext";
 
 const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { register, handleSubmit, errors } = useForm();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
     const { setModalIsOpen, setModalHeadingText, setModalContentText } =
         useContext(ModalContext);
 
@@ -57,8 +61,7 @@ const ContactForm = () => {
                         className="contact-form--input"
                         type="text"
                         placeholder="Name"
-                        name="name"
-                        ref={register({ required: "Required" })}
+                        {...register("name", { required: "Required" })}
                     />
                     {errors.name && errors.name.type === "required" && (
                         <span className="contact-form-error">
@@ -69,15 +72,14 @@ const ContactForm = () => {
                     <input
                         className="contact-form--input"
                         type="email"
-                        name="email"
-                        placeholder="Email"
-                        ref={register({
+                        {...register("email", {
                             required: "Required",
                             pattern: {
                                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                 message: "invalid email address",
                             },
                         })}
+                        placeholder="Email"
                     />
                     {errors.name && errors.name.type === "required" && (
                         <span className="contact-form-error">
@@ -88,8 +90,7 @@ const ContactForm = () => {
                     <textarea
                         placeholder="Enter your question here."
                         className="contact-form--input"
-                        name="question"
-                        ref={register({ required: "Required" })}
+                        {...register("question", { required: "Required" })}
                     />
                     {errors.name && errors.name.type === "required" && (
                         <span className="contact-form-error">

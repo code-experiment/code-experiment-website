@@ -97,11 +97,10 @@ const Timer = () => {
                                 <div className="field-row">
                                     <div className="hours time-input ">
                                         <input
-                                            name="hours"
+                                            {...register("hours")}
                                             type="number"
                                             autoComplete="off"
                                             value={hours}
-                                            ref={register}
                                             onChange={(event) =>
                                                 setHours(event.target.value)
                                             }
@@ -109,11 +108,10 @@ const Timer = () => {
                                     </div>
                                     <div className="minutes time-input">
                                         <input
-                                            name="minutes"
+                                            {...register("minutes")}
                                             type="number"
                                             autoComplete="off"
                                             value={minutes}
-                                            ref={register}
                                             onChange={(event) =>
                                                 setMinutes(event.target.value)
                                             }
@@ -121,11 +119,10 @@ const Timer = () => {
                                     </div>
                                     <div className="seconds time-input">
                                         <input
-                                            name="seconds"
+                                            {...register("seconds")}
                                             type="number"
                                             autoComplete="off"
                                             value={seconds}
-                                            ref={register}
                                             onChange={(event) =>
                                                 setSeconds(event.target.value)
                                             }
