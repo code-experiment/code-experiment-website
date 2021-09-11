@@ -2,43 +2,46 @@ import React, { useContext } from "react";
 import ModalContext from "../contexts/ModalContext";
 
 const Modal = () => {
-  const {
-    modalIsOpen,
-    setModalIsOpen,
-    modalHeadingText,
-    setModalHeadingText,
-    modalContentText,
-    setModalContentText,
-  } = useContext(ModalContext);
+    const {
+        modalIsOpen,
+        setModalIsOpen,
+        modalHeadingText,
+        setModalHeadingText,
+        modalContentText,
+        setModalContentText,
+    } = useContext(ModalContext);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    setModalHeadingText(false);
-    setModalContentText("");
-    setModalIsOpen(false);
-  };
+    const handleClick = (e) => {
+        e.preventDefault();
+        setModalHeadingText(false);
+        setModalContentText("");
+        setModalIsOpen(false);
+    };
 
-  if (!modalIsOpen) {
-    return null;
-  }
+    if (!modalIsOpen) {
+        return null;
+    }
 
-  return (
-    <div className="modal-container">
-      <div className="modal-content-wrapper">
-        <div className="modal-heading-text">
-          {modalHeadingText ? modalHeadingText : "Alert"}
+    return (
+        <div className="modal-container">
+            <div className="modal-content-wrapper">
+                <div className="modal-heading-text">
+                    {modalHeadingText ? modalHeadingText : "Alert"}
+                </div>
+
+                <div className="modal-main-content-wrapper">
+                    <div className="modal-main-content">{modalContentText}</div>
+
+                    <button
+                        className="modal-main-content-btn"
+                        onClick={handleClick}
+                    >
+                        OK
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <div className="modal-main-content-wrapper">
-          <div className="modal-main-content">{modalContentText}</div>
-
-          <button className="modal-main-content-btn" onClick={handleClick}>
-            OK
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Modal;

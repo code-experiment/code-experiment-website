@@ -1,0 +1,30 @@
+{
+    "name": "code-experiment-website",
+    "version": "1.0.0",
+    "description": "This is the repo for the Code Experiment Meetup's website. We look forward to working with you at our weekly meetup!",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/code-experiment/code-experiment-website.git"
+    },
+    "author": "Daniel Floyd <gleek.dan@gmail.com> (https://github.com/gleekzorp)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/code-experiment/code-experiment-website/issues"
+    },
+    "homepage": "https://github.com/code-experiment/code-experiment-website#readme",
+    "devDependencies": {
+        "eslint": "7.32.0",
+        "eslint-config-prettier": "8.3.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "prettier": "^2.4.0"
+    },
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
+    }
+}
