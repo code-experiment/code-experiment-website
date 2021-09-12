@@ -5,18 +5,22 @@ const projRootPath = __dirname.split("\\clean-config")[0].replace(/\\/g, "/");
 
 if (fs.existsSync(`${projRootPath}/mail-server/config.js`)) {
     // If config.js exists
-    const config = require(`${projRootPath}/mail-server/config`);
+    const {
+        THE_EMAIL,
+        THE_PASSWORD,
+        CLIENT_ID,
+        CLIENT_SECRET,
+        REFRESH_TOKEN,
+        ACCESS_TOKEN,
+    } = require(`${projRootPath}/mail-server/config`);
 
     if (
-        config === // If config.js is clean
-        {
-            THE_EMAIL: "codeexperimentcontact@gmail.com",
-            THE_PASSWORD: "PasswordHere",
-            CLIENT_ID: "ClientIDHere",
-            CLIENT_SECRET: "ClientSecretHere",
-            REFRESH_TOKEN: "RefreshTokenHere",
-            ACCESS_TOKEN: "AccessTokenHere",
-        }
+        THE_EMAIL === "codeexperimentcontact@gmail.com" &&
+        THE_PASSWORD === "PasswordHere" &&
+        CLIENT_ID === "ClientIDHere" &&
+        CLIENT_SECRET === "ClientSecretHere" &&
+        REFRESH_TOKEN === "RefreshTokenHere" &&
+        ACCESS_TOKEN === "AccessTokenHere"
     ) {
         console.log("config is clean");
     } else {
