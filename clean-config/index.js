@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-// get the project folder path
+// get the project folder path (replace '\' with '/' in case using Windows)
 const projRootPath = __dirname.split("\\clean-config")[0].replace(/\\/g, "/");
 
 if (fs.existsSync(`${projRootPath}/mail-server/config.js`)) {
