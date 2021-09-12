@@ -35,11 +35,10 @@ const transporter = nodemailer.createTransport(transport);
 sendToMeRouter.post("/", (req, res) => {
     //make mailable object
     const mail = {
-        // from: `${req.body.name} <${req.body.email}>`,
         from: THE_EMAIL,
         to: THE_EMAIL,
         subject: req.body.subject,
-        text: `${req.body.text}\r\nSent from CodeExperiment Contact Form`,
+        text: `From: ${req.body.name}\r\nEmail: ${req.body.email}\r\nMessage:\r\n${req.body.text}\r\n\r\nSent from CodeExperiment Contact Form`,
     };
 
     transporter.sendMail(mail, (err, data) => {
