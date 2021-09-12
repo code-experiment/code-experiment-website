@@ -3,7 +3,7 @@ const sendToMeRouter = express.Router();
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const { OAuth2 } = google.auth;
-// const config = require("../config.js");
+// const config = require("../config.js"); // When testing mail-server locally, put keys in config.js
 const process = require("process"); // though available globally, nodejs.org recommends importing process for each use
 
 const SCOPE = "https://mail.google.com/";
