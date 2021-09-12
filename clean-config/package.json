@@ -1,0 +1,11 @@
+{
+    "name": "clean-config",
+    "version": "1.0.0",
+    "description": "Clean the config file of all secrets.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Brian Kozub",
+    "license": "MIT"
+}
