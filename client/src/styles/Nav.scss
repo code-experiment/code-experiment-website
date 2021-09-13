@@ -1,61 +1,61 @@
 .nav-bar-wrapper {
-  width: 100%;
-  height: 80px;
-  position: fixed;
-  background-color: #22223b;
-  border-bottom: 7px solid #F88E00;
-  display: flex;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    background-color: #22223b;
+    border-bottom: 7px solid #f88e00;
+    display: flex;
 }
 
 .nav-bar-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .logo-container {
-  font-size: 1.5rem;
-  color: #F88E00;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    font-size: 1.5rem;
+    color: #f88e00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .links-inner-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .link-wrapper {
-  padding: 0 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .link {
-  background-color: #22223b;
-  border: 1px solid transparent;
-  color: #F88E00;
-  transition: .5s ease-in-out;
-  text-decoration: none;
-  cursor: pointer;
+    background-color: #22223b;
+    border: 1px solid transparent;
+    color: #f88e00;
+    transition: 0.5s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .link:hover {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 .active {
-  color: #ffffff;
-  border-bottom: 1px solid white;
+    color: #ffffff;
+    border-bottom: 1px solid white;
 }
 
 @media only screen and (max-width: 675px) {
-  .nav-bar-container {
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
+    .nav-bar-container {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
 }

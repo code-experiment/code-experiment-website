@@ -14,23 +14,31 @@ import ModalProvider from "../providers/ModalProvider";
 import Modal from "../helpers/Modal";
 
 const App = () => {
-  return (
-    <ModalProvider>
-      <Router>
-        <Nav />
-        <Modal />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/utilities" component={Utilities} />
-          <Route exact path="/utilities/bigwinner" component={BigWinner} />
-          <Route exact path="/utilities/randomizer" component={Randomizer} />
-          <Route exact path="/utilities/timer" component={Timer} />
+    return (
+        <ModalProvider>
+            <Router>
+                <Nav />
+                <Modal />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/utilities" component={Utilities} />
+                    <Route
+                        exact
+                        path="/utilities/bigwinner"
+                        component={BigWinner}
+                    />
+                    <Route
+                        exact
+                        path="/utilities/randomizer"
+                        component={Randomizer}
+                    />
+                    <Route exact path="/utilities/timer" component={Timer} />
 
-          <Route component={NoMatch} />
-        </Switch>
-      </Router>
-    </ModalProvider>
-  );
+                    <Route component={NoMatch} />
+                </Switch>
+            </Router>
+        </ModalProvider>
+    );
 };
 
 export default App;

@@ -1,24 +1,24 @@
 .contact-form-wrapper {
-  background: #22223B;
+    background: #22223b;
 }
 
 .contact-form-container {
-  min-height: calc(100vh);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    min-height: calc(100vh);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-form-header-text {
-  text-align: center;
-  color: #FFFFFF;
+    text-align: center;
+    color: #ffffff;
 }
 
 .contact-form {
-  padding-top: 2em;
-  display: flex;
-  flex-direction: column;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-form-label {
@@ -29,49 +29,48 @@
 }
 
 .contact-form--input {
-  padding: 1em;
-  border: 2px solid #22223b;
-  outline: none;
-  border-radius: 0.25em;
+    padding: 1em;
+    border: 2px solid #22223b;
+    outline: none;
+    border-radius: 0.25em;
 }
 
 .contact-form--input:focus {
-  border: 2px solid #f88e00;
+    border: 2px solid #f88e00;
 }
 
 .contact-form--input + .contact-form--input {
-  margin-top: 2em;
+    margin-top: 2em;
 }
 
 #contact-form > textarea {
-  height: 10em;
+    height: 10em;
 }
 
 .contact-form-btn {
-  padding: 1em;
-  margin-top: 2em;
-  margin-bottom: 1em;
-  border: none;
-  background-color: #F88E00;
-  color: #FFFFFF;
-  border-radius: 0.25em;
-  cursor: pointer;
-  outline: none;
+    padding: 1em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    border: none;
+    background-color: #f88e00;
+    color: #ffffff;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
 }
 
 .contact-form-btn:hover {
-  background-color: rgb(221, 125, 0);
+    background-color: rgb(221, 125, 0);
 }
 
 .contact-form-error {
-  color: #F88E00;
-  padding: 0.5em 0;  
+    color: #f88e00;
+    padding: 0.5em 0;
 }
 
 @media only screen and (min-width: 1000px) {
-  .contact-form-container {
-    max-width: 60%;
-    margin: 0 auto;
-  }
+    .contact-form-container {
+        max-width: 60%;
+        margin: 0 auto;
+    }
 }
-
