@@ -57,8 +57,12 @@ const ContactForm = () => {
                     onSubmit={handleSubmit(onSubmit)}
                     className="contact-form"
                 >
+                    <label htmlFor="namedInput" className="contact-form-label">
+                        Name:
+                    </label>
                     <input
                         className="contact-form--input"
+                        id="namedInput"
                         type="text"
                         placeholder="Name"
                         {...register("name", { required: "Required" })}
@@ -68,9 +72,12 @@ const ContactForm = () => {
                             This is required
                         </span>
                     )}
-
+                    <label htmlFor="emailInput" className="contact-form-label">
+                        Email:
+                    </label>
                     <input
                         className="contact-form--input"
+                        id="emailInput"
                         type="email"
                         {...register("email", {
                             required: "Required",
@@ -86,9 +93,15 @@ const ContactForm = () => {
                             This is required
                         </span>
                     )}
-
+                    <label
+                        htmlFor="questionInput"
+                        className="contact-form-label"
+                    >
+                        Question:
+                    </label>
                     <textarea
                         placeholder="Enter your question here."
+                        id="questionInput"
                         className="contact-form--input"
                         {...register("question", { required: "Required" })}
                     />
