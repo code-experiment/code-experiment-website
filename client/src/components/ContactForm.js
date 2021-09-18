@@ -57,10 +57,8 @@ const ContactForm = () => {
                     onSubmit={handleSubmit(onSubmit)}
                     className="contact-form"
                 >
-                    <label 
-                        htmlFor="namedInput"
-                        className="contact-form-label">
-                        Name: 
+                    <label htmlFor="namedInput" className="contact-form-label">
+                        Name:
                     </label>
                     <input
                         className="contact-form--input"
@@ -74,10 +72,8 @@ const ContactForm = () => {
                             This is required
                         </span>
                     )}
-                    <label 
-                        htmlFor="emailInput" 
-                        className="contact-form-label">
-                        Email: 
+                    <label htmlFor="emailInput" className="contact-form-label">
+                        Email:
                     </label>
                     <input
                         className="contact-form--input"
@@ -97,10 +93,11 @@ const ContactForm = () => {
                             This is required
                         </span>
                     )}
-                    <label 
-                        htmlFor="questionInput" 
-                        className="contact-form-label">
-                        Question: 
+                    <label
+                        htmlFor="questionInput"
+                        className="contact-form-label"
+                    >
+                        Question:
                     </label>
                     <textarea
                         placeholder="Enter your question here."
