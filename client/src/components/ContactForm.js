@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
+import emailjs from "emailjs-com";
 import { useForm } from "react-hook-form";
 
-import api from "../helpers/api";
 import ModalContext from "../contexts/ModalContext";
 
 const ContactForm = () => {
@@ -16,15 +16,19 @@ const ContactForm = () => {
 
     const onSubmit = (data, e) => {
         setIsSubmitting(true);
-        JSON.stringify(data);
-        api.post("/", {
-            subject: "New Message From Website",
-            name: data.name,
-            email: data.email,
-            text: data.question,
-        })
-            .then((res) => {
-                if (res.data.status === "success") {
+        emailjs
+            .send(
+                process.env.REACT_APP_SERVICE_ID,
+                process.env.REACT_APP_TEMPLATE_ID,
+                {
+                    name: data.name,
+                    email: data.email,
+                    question: data.question,
+                },
+                process.env.REACT_APP_USER_ID
+            )
+            .then((response) => {
+                if (response.status === 200) {
                     e.target.reset();
                     setModalHeadingText("Success!");
                     setModalContentText(
@@ -41,7 +45,8 @@ const ContactForm = () => {
                     setIsSubmitting(false);
                 }
             })
-            .catch(() => {
+            .catch((error) => {
+                console.log("FAILED...", error);
                 setModalHeadingText("Error");
                 setModalContentText("Server possibly down");
                 setModalIsOpen(true);
